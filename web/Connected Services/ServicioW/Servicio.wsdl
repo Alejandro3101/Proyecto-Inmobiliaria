@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mtdListarCategoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarCiudad">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarCiudadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarCiudadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarEstado">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarEstadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarTipo">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarTipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarTipoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicaciones2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPubli" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clPublicacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPublicacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estrato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Habitaciones" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCiudad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCategoria" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="mtdListarPublicaciones2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicaciones2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarPublicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublicacion" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdRegistrarPublicacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mtdListarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarCiudadSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarCiudad" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarCiudadSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarEstado" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarTipoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarTipo" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarTipoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicaciones2SoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicaciones2" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicaciones2SoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicaciones2Response" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarPublicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioSoap">
+    <wsdl:operation name="mtdListarCategoria">
+      <wsdl:input message="tns:mtdListarCategoriaSoapIn" />
+      <wsdl:output message="tns:mtdListarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarCiudad">
+      <wsdl:input message="tns:mtdListarCiudadSoapIn" />
+      <wsdl:output message="tns:mtdListarCiudadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarEstado">
+      <wsdl:input message="tns:mtdListarEstadoSoapIn" />
+      <wsdl:output message="tns:mtdListarEstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarTipo">
+      <wsdl:input message="tns:mtdListarTipoSoapIn" />
+      <wsdl:output message="tns:mtdListarTipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicaciones2">
+      <wsdl:input message="tns:mtdListarPublicaciones2SoapIn" />
+      <wsdl:output message="tns:mtdListarPublicaciones2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarPublicacion">
+      <wsdl:input message="tns:mtdRegistrarPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdRegistrarPublicacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mtdListarCategoria">
+      <soap:operation soapAction="http://tempuri.org/mtdListarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarCiudad">
+      <soap:operation soapAction="http://tempuri.org/mtdListarCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarEstado">
+      <soap:operation soapAction="http://tempuri.org/mtdListarEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarTipo">
+      <soap:operation soapAction="http://tempuri.org/mtdListarTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicaciones2">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicaciones2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdRegistrarPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mtdListarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarCiudad">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarCiudad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarEstado">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarTipo">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarTipo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicaciones2">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicaciones2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdRegistrarPublicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:port name="ServicioSoap" binding="tns:ServicioSoap">
+      <soap:address location="http://localhost:60951/Servicio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioSoap12" binding="tns:ServicioSoap12">
+      <soap12:address location="http://localhost:60951/Servicio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

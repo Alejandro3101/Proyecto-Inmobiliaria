@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../imglogin/fondo_login.jpg) no-repeat center top ;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.login-box {
+    width: 320px;
+    height: 342px;
+    background: FFFFFF;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.login-box .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -48px;
+  left: 116px;
+}
+
+
+.login-box h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: Arial;
+  display: block;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+    .login-box input[type="text"], .login-box input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #FFFFFF;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: white;
+        font-size: 16px;
+    }
+
+
+.Menu h1{
+   margin: 10PX;
+  padding: 0 0 20px;
+  font-size: 30px;
+   color: white;
+
+}
+.login-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height:30px; 
+  color: darkgrey;
+}
+
+.login-box a:hover {
+  color: #81D539;
+}
+.jhonatan {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 260px;
+    background: #968F7B;
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+}
