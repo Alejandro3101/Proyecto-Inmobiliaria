@@ -74,11 +74,27 @@ namespace Servicio
         }
 
         [WebMethod]
+        public int mtdRegistrarUsuario(clUsuario objUsuario)
+        {
+            clUsuario objUsuar = new clUsuario();
+            int result = objUsuario.mtdRegistrarUsu(objUsuario);
+            return result;
+        }
+
+        [WebMethod]
         public int Login(string usuario, string contrasena)
         {
             clConexion objcone = new clConexion();
             int res = objcone.mtdLogin(usuario, contrasena);
             return res;
+        }
+        [WebMethod]
+        public DataSet mtdListarRol()
+        {
+            DataSet dsRol = new DataSet();
+            clRol objRol = new clRol();
+            dsRol = objRol.mtdListarRol();
+            return dsRol;
         }
     }
 }

@@ -58,16 +58,30 @@ namespace web.ServicioW {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarPublicacion", ReplyAction="*")]
         System.Threading.Tasks.Task<int> mtdRegistrarPublicacionAsync(web.ServicioW.clPublicacion objPublicacion);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int mtdRegistrarUsuario(web.ServicioW.clUsuario objUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> mtdRegistrarUsuarioAsync(web.ServicioW.clUsuario objUsuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int Login(string usuario, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
         System.Threading.Tasks.Task<int> LoginAsync(string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarRol", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet mtdListarRol();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarRol", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> mtdListarRolAsync();
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -266,6 +280,150 @@ namespace web.ServicioW {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clUsuario : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int idUsuarioField;
+        
+        private string nombreField;
+        
+        private string apellidoField;
+        
+        private string emailField;
+        
+        private string telefonoField;
+        
+        private string ciudadField;
+        
+        private string ubicacionField;
+        
+        private string contrasenaField;
+        
+        private int idRolField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int IdUsuario {
+            get {
+                return this.idUsuarioField;
+            }
+            set {
+                this.idUsuarioField = value;
+                this.RaisePropertyChanged("IdUsuario");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("Nombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Apellido {
+            get {
+                return this.apellidoField;
+            }
+            set {
+                this.apellidoField = value;
+                this.RaisePropertyChanged("Apellido");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Telefono {
+            get {
+                return this.telefonoField;
+            }
+            set {
+                this.telefonoField = value;
+                this.RaisePropertyChanged("Telefono");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Ciudad {
+            get {
+                return this.ciudadField;
+            }
+            set {
+                this.ciudadField = value;
+                this.RaisePropertyChanged("Ciudad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string Ubicacion {
+            get {
+                return this.ubicacionField;
+            }
+            set {
+                this.ubicacionField = value;
+                this.RaisePropertyChanged("Ubicacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Contrasena {
+            get {
+                return this.contrasenaField;
+            }
+            set {
+                this.contrasenaField = value;
+                this.RaisePropertyChanged("Contrasena");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public int IdRol {
+            get {
+                return this.idRolField;
+            }
+            set {
+                this.idRolField = value;
+                this.RaisePropertyChanged("IdRol");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicioSoapChannel : web.ServicioW.ServicioSoap, System.ServiceModel.IClientChannel {
     }
@@ -341,12 +499,28 @@ namespace web.ServicioW {
             return base.Channel.mtdRegistrarPublicacionAsync(objPublicacion);
         }
         
+        public int mtdRegistrarUsuario(web.ServicioW.clUsuario objUsuario) {
+            return base.Channel.mtdRegistrarUsuario(objUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<int> mtdRegistrarUsuarioAsync(web.ServicioW.clUsuario objUsuario) {
+            return base.Channel.mtdRegistrarUsuarioAsync(objUsuario);
+        }
+        
         public int Login(string usuario, string contrasena) {
             return base.Channel.Login(usuario, contrasena);
         }
         
         public System.Threading.Tasks.Task<int> LoginAsync(string usuario, string contrasena) {
             return base.Channel.LoginAsync(usuario, contrasena);
+        }
+        
+        public System.Data.DataSet mtdListarRol() {
+            return base.Channel.mtdListarRol();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> mtdListarRolAsync() {
+            return base.Channel.mtdListarRolAsync();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Publicacion.aspx.cs" Inherits="web.Formulario_web19" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="web.Formulario_web18" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -92,6 +92,12 @@
           
             <form runat="server" action="#" class="p-5 bg-white border">
 
+
+                   <div class="form-group">
+                <label class="font-weight-bold" for="email">Rol</label>
+                    <asp:DropDownList class="form-control"  id="cmbRol" runat="server"></asp:DropDownList>
+                </div>
+                
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname" >Nombre</label>
@@ -101,16 +107,16 @@
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="email" >Precio</label>
-                    <asp:TextBox class="form-control"  id="txtPrecio" runat="server" placeholder="Precio"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
+                  <label class="font-weight-bold" for="fullname" >Apellido</label>
+                    <asp:TextBox class="form-control"  id="txtApellido" runat="server" placeholder="Apellido"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtApellido" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="email" >Direccion</label>
-                     <asp:TextBox name="Direccion" class="form-control"  id="txtDireccion" runat="server" placeholder="Direccion"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDireccion" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
+                  <label class="font-weight-bold" for="email" >Email</label>
+                     <asp:TextBox name="Email" class="form-control"  id="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtEmail" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
               </div>
 
@@ -122,119 +128,36 @@
                 </div>
               </div>
 
-                <div class="form-group">
-                <label class="font-weight-bold" for="email">Tipo</label>
-                    <asp:DropDownList class="form-control"  id="cmbTipo" runat="server" OnSelectedIndexChanged="cmbTipo_SelectedIndexChanged"></asp:DropDownList>
+               <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="email" >Ciudad</label>
+                    <asp:TextBox class="form-control"  id="txtCiudad" runat="server" placeholder="Ciudad"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCiudad" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
-
-                <%--<div class="form-group">
-                <label class="font-weight-bold" for="email">Estado</label>
-                    <asp:DropDownList class="form-control"  id="cmbEstado" runat="server"></asp:DropDownList>
-              </div>--%>
-
-                <div class="form-group">
-                <label class="font-weight-bold" for="email">Ciudad</label>
-                      <asp:DropDownList class="form-control"  id="cmbCiudad" runat="server"></asp:DropDownList>
               </div>
 
-                <div class="form-group">
-                <label class="font-weight-bold" for="email">Categoria</label>
-                     <asp:DropDownList class="form-control"   id="cmbCategoria" runat="server"></asp:DropDownList>
+                 <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="email" >Ubicacion</label>
+                    <asp:TextBox class="form-control"  id="txtUbicacion" runat="server" placeholder="Ubicacion"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtUbicacion" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
-
-              <div class="form-group">
-                <label class="font-weight-bold" for="email" >Estrato</label>
-                  <asp:DropDownList  class="form-control" ID="cmbEstrato" runat="server">
-                      <asp:ListItem Value="uno">1</asp:ListItem>
-                      <asp:ListItem Value="dos">2</asp:ListItem>
-                      <asp:ListItem Value="tres">3</asp:ListItem>
-                      <asp:ListItem Value="cuatro">4</asp:ListItem>
-                      <asp:ListItem Value="cinco">5</asp:ListItem>
-                      <asp:ListItem Value="seis">6</asp:ListItem>
-                  </asp:DropDownList>
-                
               </div>
 
-              <div class="form-group">
-                <label class="font-weight-bold" for="email"  runat="server">Habitaciones</label>
-                  <asp:DropDownList class="form-control" id="cmbHabitacion" runat="server">
-                      <asp:ListItem>1</asp:ListItem>
-                      <asp:ListItem>2</asp:ListItem>
-                      <asp:ListItem>3</asp:ListItem>
-                      <asp:ListItem>4</asp:ListItem>
-                      <asp:ListItem>5</asp:ListItem>
-                      <asp:ListItem>6</asp:ListItem>
-                      <asp:ListItem>7</asp:ListItem>
-                      <asp:ListItem>8</asp:ListItem>
-                      <asp:ListItem>9</asp:ListItem>
-                      <asp:ListItem>10</asp:ListItem>
-                      <asp:ListItem>11</asp:ListItem>
-                      <asp:ListItem>12</asp:ListItem>
-                      <asp:ListItem>13</asp:ListItem>
-                      <asp:ListItem>14</asp:ListItem>
-                      <asp:ListItem>15</asp:ListItem>
-                      <asp:ListItem>16</asp:ListItem>
-                      <asp:ListItem>17</asp:ListItem>
-                      <asp:ListItem>18</asp:ListItem>
-                      <asp:ListItem>19</asp:ListItem>
-                      <asp:ListItem>20</asp:ListItem>
-                  </asp:DropDownList>
+                 <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="password" >Contraseña</label>
+                    <asp:TextBox class="form-control"  id="txtContrasena" runat="server" placeholder="Contraseña"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtContrasena" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
+                </div>
               </div>
 
              
-       <div class ="container">
-            <div class ="row"> 
-                <div class="col-md-4 col.md-offset-4" >
-                    Imagen Agregada:
-                    <br />
-                    <asp:Image ID="ImgPreView" width="100" ImageUrl="https://image.flaticon.com/icons/png/512/14/14232.png" runat="server" />
-                    <br />
-                    <br />
-                    Archivo:
-                    <asp:FileUpload ID="fuploadImagen" accept=".jpg" runat="server" CssClass="form-control"/>
-                    <br />
-                    Titulo de Imagen
-                    
-                    <br />
-                    <asp:Button ID="btnSubir" runat="server" Text="Adjuntar Imagen" CssClass="btn btn-success" OnClick="btnSubir_Click" />
-
-                </div>
-                
-
-            </div>
-            
-            
-            <div class ="row"> 
-                <asp:Repeater ID="Repeater1" runat="server">
-                <ItemTemplate>
-                    <div class="col-md-4">
-
-                        <img class="img-responsive" src="data:image/jpg;base64,<%# Convert.ToBase64String((byte[]) DataBinder.Eval(Container.DataItem ,"Imagen")) %>" />
-                        <%#  DataBinder.Eval(Container.DataItem ,"Titulo") %>
-                        <br />
-                    </div>
-
-
-                </ItemTemplate> 
-
-               </asp:Repeater>
-
-            </div>
-        </div>
-    
               
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="message"  runat="server" >Descripcion Del Inmueble</label> 
-                    <asp:TextBox name="Descripcion" id="txtDescripcion" runat="server" cols="30" rows="5" class="form-control" placeholder="Descripcion del inmueble"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red"></asp:RequiredFieldValidator>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                    <asp:Button class="btn btn-primary  py-2 px-4 rounded-0" ID="btnPublicar" runat="server" Text="Publicar" OnClick="btnPublicar_Click" />
+                    <asp:Button class="btn btn-primary  py-2 px-4 rounded-0" ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" />
                 </div>
               </div>
 
@@ -349,6 +272,4 @@
     
   </body>
 </html>
-
-
 </asp:Content>

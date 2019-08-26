@@ -88,6 +88,7 @@
     <Compile Include="Datos\clConexion.cs" />
     <Compile Include="Datos\clEstado.cs" />
     <Compile Include="Datos\clPublicacion.cs" />
+    <Compile Include="Datos\clRol.cs" />
     <Compile Include="Datos\clTipo.cs" />
     <Compile Include="Datos\clUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

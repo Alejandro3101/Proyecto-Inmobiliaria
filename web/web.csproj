@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="csslogin\master.css" />
+    <Content Include="Usuarios.aspx" />
     <Content Include="imglogin\fondo_login.jpg" />
     <Content Include="imglogin\logosaleya.png" />
     <Content Include="Login.aspx" />
@@ -313,6 +314,13 @@
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ValidarLogin.aspx.cs">
       <DependentUpon>ValidarLogin.aspx</DependentUpon>

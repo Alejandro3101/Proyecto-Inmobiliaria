@@ -11,7 +11,7 @@ namespace Servicio.Datos
 
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
-        public string Aapellido { get; set; }
+        public string Apellido { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
         public string Ciudad { get; set; }
@@ -26,6 +26,25 @@ namespace Servicio.Datos
             DataSet dsUsuarioLogin = new DataSet();
             dsUsuarioLogin = objcone.mtdDesconectado(consulta);
             return dsUsuarioLogin;
+        }
+
+        public DataSet mtdListarUsu(clUsuario objUsuario)
+        {
+            string consulta = "Select * from Usuario";
+            DataSet dsUsuario = new DataSet();
+            clConexion objConexion = new clConexion();
+            dsUsuario = objConexion.mtdDesconectado(consulta);
+            return dsUsuario;
+        }
+
+
+        public int mtdRegistrarUsu(clUsuario objUsuario)
+        {
+            string consulta = "insert into Usuario(Nombre,Apellido,Email,Telefono,Ciudad,Ubicacion,Contrasena,IdRol)" +
+                "values('" + objUsuario.Nombre + "','" + objUsuario.Apellido + "','" + objUsuario.Email + "', '" + objUsuario.Telefono + "', '" + objUsuario.Ciudad + "','" + objUsuario.Ubicacion + "', '" + objUsuario.Contrasena + "'" +
+                ", " + objUsuario.IdRol + ")";
+            int resultado = objcone.mtdConectado(consulta);
+            return resultado;
         }
 
 
