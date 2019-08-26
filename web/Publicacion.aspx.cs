@@ -14,32 +14,16 @@ namespace web
     {
 
         ServicioW.ServicioSoapClient miServicio = new ServicioW.ServicioSoapClient();
-        //string CadenaConexion = " Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = | DataDirectory|\\bdSaleYa.mdf Integrated Security = True";
         protected void Page_Init (object sender, EventArgs e)
         {
-
-            //DataSet dsTipo = new DataSet();
-            //dsTipo = miServicio.mtdListarTipo();
-            //int C = dsTipo.Tables["tblDatos"].Rows.Count;
-
-            //cmbTipo.DataSource = dsTipo.Tables["tblDatos"];
-            //cmbTipo.DataTextField = "Tipo";
-            //cmbTipo.DataValueField = "IdTipo";
-            //cmbTipo.DataBind();
-
             mtdCargarTipo();
-            mtdCargarEstado();
             mtdCargarCiudad();
             mtdCargarCategoria();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtNombre.Text = "";
-            //txtPrecio.Text = "";
-            txtDireccion.Text = "";
-            txtTelefono.Text = "";
-            txtDescripcion.Text = "";
+            
         }
 
         protected void btnSubir_Click(object sender, EventArgs e)
@@ -133,18 +117,6 @@ namespace web
             cmbTipo.DataBind();
         }
 
-        public void mtdCargarEstado()
-        {
-            DataSet dsEstado = new DataSet();
-            dsEstado = miServicio.mtdListarEstado();
-            int C = dsEstado.Tables["tblDatos"].Rows.Count;
-
-            cmbEstado.DataSource = dsEstado.Tables["tblDatos"];
-            cmbEstado.DataTextField = "Estado";
-            cmbEstado.DataValueField = "IdEstado";
-            cmbEstado.DataBind();
-        }
-
         public void mtdCargarCiudad()
         {
             DataSet dsCiudad = new DataSet();
@@ -179,18 +151,18 @@ namespace web
             objPublicacion.Descripcion = txtDescripcion.Text;
             objPublicacion.Telefono = txtTelefono.Text;
             objPublicacion.Estrato = cmbEstrato.SelectedValue.ToString();
-            objPublicacion.Direccion = txtDireccion.Text;
+            objPublicacion.Direccion = txtDescripcion.Text;
             objPublicacion.Habitaciones = int.Parse(cmbHabitacion.SelectedValue.ToString());
             objPublicacion.IdUsuario = 2;
             objPublicacion.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
-            objPublicacion.IdEstado = int.Parse(cmbEstado.SelectedValue.ToString());
+            objPublicacion.IdEstado = 1;
             objPublicacion.IdCiudad = int.Parse(cmbCiudad.SelectedValue.ToString());
             objPublicacion.IdCategoria = int.Parse(cmbCategoria.SelectedValue.ToString());
             int result = miServicio.mtdRegistrarPublicacion(objPublicacion);
             if (result > 0)
             {
 
-                Response.Redirect("properties.aspx");
+                Response.Redirect("index.aspx");
 
             }
         }

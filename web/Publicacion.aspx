@@ -127,10 +127,10 @@
                     <asp:DropDownList class="form-control"  id="cmbTipo" runat="server" OnSelectedIndexChanged="cmbTipo_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
-                <div class="form-group">
+                <%--<div class="form-group">
                 <label class="font-weight-bold" for="email">Estado</label>
                     <asp:DropDownList class="form-control"  id="cmbEstado" runat="server"></asp:DropDownList>
-              </div>
+              </div>--%>
 
                 <div class="form-group">
                 <label class="font-weight-bold" for="email">Ciudad</label>

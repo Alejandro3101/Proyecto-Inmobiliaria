@@ -94,15 +94,6 @@ namespace web {
         protected global::System.Web.UI.WebControls.DropDownList cmbTipo;
         
         /// <summary>
-        /// Control cmbEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbEstado;
-        
-        /// <summary>
         /// Control cmbCiudad.
         /// </summary>
         /// <remarks>
