@@ -17,12 +17,16 @@ namespace web
             int res = mi.Login(usu, con);
             if (res > 0)
             {
-                Response.Redirect("index.aspx");
+                Session["Usuario"] = usu;
+                Session["Contrasena"] = con; 
+                Application["IdUsuario"] = res;
+                Response.Redirect("index.aspx"); 
             }
             else
             {
                 Response.Redirect("PruebaLogin3SinMaster.aspx");
             }
+            
         }
     }
 }
