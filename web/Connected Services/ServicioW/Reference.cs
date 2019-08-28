@@ -44,6 +44,13 @@ namespace web.ServicioW {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarTipo", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> mtdListarTipoAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicacion", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet mtdListarPublicacion();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> mtdListarPublicacionAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicaciones2", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet mtdListarPublicaciones2(web.ServicioW.clPublicacion objPubli);
@@ -72,6 +79,13 @@ namespace web.ServicioW {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
         System.Threading.Tasks.Task<int> LoginAsync(string usuario, string contrasena);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Imagenes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int Imagenes(string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Imagenes", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> ImagenesAsync(string usuario, string contrasena);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarRol", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet mtdListarRol();
@@ -81,7 +95,7 @@ namespace web.ServicioW {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -281,7 +295,7 @@ namespace web.ServicioW {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -483,6 +497,14 @@ namespace web.ServicioW {
             return base.Channel.mtdListarTipoAsync();
         }
         
+        public System.Data.DataSet mtdListarPublicacion() {
+            return base.Channel.mtdListarPublicacion();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> mtdListarPublicacionAsync() {
+            return base.Channel.mtdListarPublicacionAsync();
+        }
+        
         public System.Data.DataSet mtdListarPublicaciones2(web.ServicioW.clPublicacion objPubli) {
             return base.Channel.mtdListarPublicaciones2(objPubli);
         }
@@ -513,6 +535,14 @@ namespace web.ServicioW {
         
         public System.Threading.Tasks.Task<int> LoginAsync(string usuario, string contrasena) {
             return base.Channel.LoginAsync(usuario, contrasena);
+        }
+        
+        public int Imagenes(string usuario, string contrasena) {
+            return base.Channel.Imagenes(usuario, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task<int> ImagenesAsync(string usuario, string contrasena) {
+            return base.Channel.ImagenesAsync(usuario, contrasena);
         }
         
         public System.Data.DataSet mtdListarRol() {
