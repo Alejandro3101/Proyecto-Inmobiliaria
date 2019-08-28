@@ -89,6 +89,13 @@ namespace Servicio
             return res;
         }
         [WebMethod]
+        public int Imagenes(string usuario, string contrasena)
+        {
+            clConexion objcone = new clConexion();
+            int res = objcone.mtdLogin(usuario, contrasena);
+            return res;
+        }
+        [WebMethod]
         public DataSet mtdListarRol()
         {
             DataSet dsRol = new DataSet();

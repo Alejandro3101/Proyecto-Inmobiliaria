@@ -24,7 +24,9 @@ namespace web
             }
             else
             {
-                Response.Redirect("PruebaLogin3SinMaster.aspx");
+                Console.WriteLine("Usuario o Contraseña incorrectos");
+                Response.Redirect("Login.aspx");
+                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "popup", "alert('Correo y/o Contraseña Incorrecta')", true);
             }
             
         }

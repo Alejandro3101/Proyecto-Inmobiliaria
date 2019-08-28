@@ -40,7 +40,7 @@ namespace web
             DataSet dsTipo = new DataSet();
             dsTipo = miServicio.mtdListarTipo();
             int C = dsTipo.Tables["tblDatos"].Rows.Count;
-
+            
             cmbBuscarTipo.DataSource = dsTipo.Tables["tblDatos"];
             cmbBuscarTipo.DataTextField = "Tipo";
             cmbBuscarTipo.DataValueField = "IdTipo";

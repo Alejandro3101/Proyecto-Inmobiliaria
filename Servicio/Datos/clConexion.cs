@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -46,12 +47,21 @@ namespace Servicio.Datos
 
         public int mtdLogin(string usuario, string contrasena)
         {
+            Int32 IdUsuario = 0;
             clConexion objcone = new clConexion();
-            objConexion.Open();
+            
             SqlCommand cmd = new SqlCommand("select u.IdUsuario, u.Contrasena, u.Email, u.Nombre, r.Rol From(Usuario as u INNER JOIN Rol as r On u.IdRol=r.IdRol) where u.Email = @Email and u.Contrasena = @Contrasena", objConexion);
             cmd.Parameters.AddWithValue("@Email", usuario);
             cmd.Parameters.AddWithValue("@Contrasena", contrasena);
-            Int32 IdUsuario = (Int32)cmd.ExecuteScalar();
+            try
+            {
+                objConexion.Open();
+                IdUsuario = (Int32)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+
+            }
             
             SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
             DataTable login = new DataTable();
@@ -62,8 +72,6 @@ namespace Servicio.Datos
 
             return IdUsuario;
         }
-
-
 
     }
 }
