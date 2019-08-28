@@ -27,7 +27,6 @@
 						<asp:TextBox ID="txtcontrasena" runat="server" class="input100" placeholder="Contrasena" name="txtcontrasena"></asp:TextBox>
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
-
 					<div >
 						<button class="jhonatan" type="boton";>
 							Iniciar Sesion

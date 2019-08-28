@@ -153,7 +153,7 @@ namespace web
             objPublicacion.Estrato = cmbEstrato.SelectedValue.ToString();
             objPublicacion.Direccion = txtDescripcion.Text;
             objPublicacion.Habitaciones = int.Parse(cmbHabitacion.SelectedValue.ToString());
-            objPublicacion.IdUsuario = 2;
+            objPublicacion.IdUsuario = int.Parse(Application["IdUsuario"].ToString());
             objPublicacion.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
             objPublicacion.IdEstado = 1;
             objPublicacion.IdCiudad = int.Parse(cmbCiudad.SelectedValue.ToString());
