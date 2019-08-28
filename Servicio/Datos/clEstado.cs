@@ -16,6 +16,7 @@ namespace Servicio.Datos
             dsEstado = objConexion.mtdDesconectado(consulta);
             int can = dsEstado.Tables["tblDatos"].Rows.Count;
             return dsEstado;
+            
         }
 
 

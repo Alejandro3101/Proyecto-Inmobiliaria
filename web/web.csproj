@@ -68,7 +68,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarImgPublicacion.aspx" />
     <Content Include="csslogin\master.css" />
+    <Content Include="Global.asax" />
     <Content Include="Usuarios.aspx" />
     <Content Include="imglogin\fondo_login.jpg" />
     <Content Include="imglogin\logosaleya.png" />
@@ -289,6 +291,13 @@
     <Compile Include="about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AgregarImgPublicacion.aspx.cs">
+      <DependentUpon>AgregarImgPublicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarImgPublicacion.aspx.designer.cs">
+      <DependentUpon>AgregarImgPublicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="blog.aspx.cs">
       <DependentUpon>blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -314,6 +323,9 @@
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
@@ -392,6 +404,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicioW\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Servicio\Servicio.csproj">
+      <Project>{7500DCA4-A53F-41F5-9E1B-F4410A989E1A}</Project>
+      <Name>Servicio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

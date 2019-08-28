@@ -35,7 +35,7 @@
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bdSaleYaConnectionString %>" SelectCommand="SELECT Categoria.Categoria, Ciudad.Ciudad, Tipo.Tipo, Publicacion.Nombre, Publicacion.Precio, Publicacion.Descripcion, Publicacion.Telefono, Publicacion.Estrato, Publicacion.Direccion, Publicacion.NumeroHabitaciones FROM Publicacion INNER JOIN Ciudad ON Publicacion.IdCiudad = Ciudad.IdCiudad INNER JOIN Tipo ON Publicacion.IdTipo = Tipo.IdTipo INNER JOIN Categoria ON Publicacion.IdCategoria = Categoria.IdCategoria WHERE (Categoria.Categoria = @Categoria) OR (Ciudad.Ciudad = @Ciudad) OR (Tipo.Tipo = @Tipo)">
           <SelectParameters>
               <asp:ControlParameter ControlID="cmbBuscarCiudad" Name="Ciudad" PropertyName="SelectedValue" />
-              <asp:ControlParameter ControlID="cmbBuscarTipo" Name="Tipo" PropertyName="SelectedValue" />
+              <asp:ControlParameter ControlID="cmbBuscarTipo" Name="Tipo" PropertyName="SelectedValue"  />
               <asp:ControlParameter ControlID="cmbBuscarCategoria" Name="Categoria" PropertyName="SelectedValue" />
           </SelectParameters>
       </asp:SqlDataSource>

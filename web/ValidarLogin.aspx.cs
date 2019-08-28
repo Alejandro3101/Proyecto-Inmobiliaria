@@ -17,12 +17,18 @@ namespace web
             int res = mi.Login(usu, con);
             if (res > 0)
             {
-                Response.Redirect("index.aspx");
+                Session["Usuario"] = usu;
+                Session["Contrasena"] = con; 
+                Application["IdUsuario"] = res;
+                Response.Redirect("index.aspx"); 
             }
             else
             {
-                Response.Redirect("PruebaLogin3SinMaster.aspx");
+                Console.WriteLine("Usuario o Contraseña incorrectos");
+                Response.Redirect("Login.aspx");
+                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "popup", "alert('Correo y/o Contraseña Incorrecta')", true);
             }
+            
         }
     }
 }
