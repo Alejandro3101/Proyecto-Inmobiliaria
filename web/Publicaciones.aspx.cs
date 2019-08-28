@@ -8,11 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace web
 {
-    public partial class Formulario_web1 : System.Web.UI.Page
+    public partial class Formulario_web111 : System.Web.UI.Page
     {
         ServicioW.ServicioSoapClient miServicio = new ServicioW.ServicioSoapClient();
-
-       protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             DataSet dsListar = new DataSet();
             ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();

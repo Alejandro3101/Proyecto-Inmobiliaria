@@ -70,7 +70,7 @@
   <ItemGroup>
     <Content Include="AgregarImgPublicacion.aspx" />
     <Content Include="csslogin\master.css" />
-    <Content Include="PruebaPublicaciones.aspx" />
+    <Content Include="Publicaciones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Usuarios.aspx" />
     <Content Include="imglogin\fondo_login.jpg" />
@@ -325,12 +325,12 @@
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PruebaPublicaciones.aspx.cs">
-      <DependentUpon>PruebaPublicaciones.aspx</DependentUpon>
+    <Compile Include="Publicaciones.aspx.cs">
+      <DependentUpon>Publicaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PruebaPublicaciones.aspx.designer.cs">
-      <DependentUpon>PruebaPublicaciones.aspx</DependentUpon>
+    <Compile Include="Publicaciones.aspx.designer.cs">
+      <DependentUpon>Publicaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
