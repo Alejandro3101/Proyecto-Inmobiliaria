@@ -75,7 +75,8 @@ namespace web
 
         protected void btnVerDetalles_Click(object sender, EventArgs e)
         {
-            
+
+            Response.Redirect("Detalles-Propiedad.aspx?parametro=" +lblIdPublicacion.Text);
         }
 
         protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)

@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AgregarImgPublicacion.aspx" />
     <Content Include="csslogin\master.css" />
+    <Content Include="Detalles-Propiedad.aspx" />
     <Content Include="Publicaciones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Usuarios.aspx" />
@@ -324,6 +325,13 @@
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detalles-Propiedad.aspx.cs">
+      <DependentUpon>Detalles-Propiedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detalles-Propiedad.aspx.designer.cs">
+      <DependentUpon>Detalles-Propiedad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Publicaciones.aspx.cs">
       <DependentUpon>Publicaciones.aspx</DependentUpon>

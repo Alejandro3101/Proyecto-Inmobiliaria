@@ -114,7 +114,7 @@
     <div class="site-section site-section-sm pb-0">
       <div class="container">
         <div class="row">
-          <form class="form-search col-md-12" runat="server" style="margin-top: -100px;">
+          <form  class="form-search col-md-12" runat="server" style="margin-top: -100px;">
             <div class="row  align-items-end">
               <div class="col-md-3">
                 <label for="list-types">Tipo De Vivienda</label>
@@ -142,10 +142,10 @@
                   <%--<input type="submit" class="btn btn-success text-white btn-block rounded-0" value="Buscar" />--%>
               </div>
             </div>
-          </form>
-        </div>
-          
-            <div class="site-section site-section-sm bg-light">
+              <br />
+              <br />
+              <br />
+               <div class="site-section site-section-sm bg-light">
       <div class="container">
 
           <asp:DataList  EditItemStyle-Width="50%"   ID="DataList1" RepeatColumns="3" RepeatDirection="Horizontal"  runat="server" Width="100" OnSelectedIndexChanged="DataList1_SelectedIndexChanged"  >
@@ -198,9 +198,9 @@
                 <img src="images/img_1.jpg" alt="Image" width="250" >
               </a>
               
-               &nbsp;<div class="p-4 property-body">
+               <div class="p-4 property-body">
                    <table>
-                    <asp:Label ID="lblIdPublicacion" runat="server" Text="" Visible="false"> <%#Eval("IdPublicacion") %>  </asp:Label>
+                    
                     <%--<tr><th>Publicaiones <%#Eval("IdPublicacion") %> </th></tr>--%>
                     <h2 class="property-title"><a href="property-details.aspx"> <%#Eval("Nombre") %> </a></h2>
                     <td  class="property-icon icon-room" ><%#Eval("Direccion") %></td>
@@ -228,17 +228,24 @@
           </asp:DataList>
 
         <%--  <asp:Repeater ID="Repeater1" runat="server">--%>
-
+          <asp:Label ID="lblIdPublicacion" runat="server" Text="" Visible="false"> <%#Eval("IdPublicacion") %>  </asp:Label>
        
 
    <%-- </asp:Repeater>--%>
       </div>
     </div>
 
-   
 
-          
-      
+
+
+
+
+          </form>
+          </div>
+          </div>
+        </div>
+
+                
 
     <div class="site-section">
         <div class="container">
