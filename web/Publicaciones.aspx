@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Homeland &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
@@ -125,7 +125,7 @@
     <div class="site-section site-section-sm pb-0">
       <div class="container">
         <div class="row">
-          <form class="form-search col-md-12" style="margin-top: -100px;">
+          <form class="form-search col-md-12" style="margin-top: 100px;">
             <div class="row  align-items-end">
               <div class="col-md-3">
                 <label for="list-types">Listing Types</label>
@@ -168,45 +168,12 @@
             </div>
           </form>
         </div>  
-              
-        <div class="row">
-          <div class="col-md-12">
-            <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
-              <div class="mr-auto">
-                <a href="index.aspx" class="icon-view view-module active"><span class="icon-view_module"></span></a>
-                <a href="view-list.aspx" class="icon-view view-list"><span class="icon-view_list"></span></a>
-                
-              </div>
-              <div class="ml-auto d-flex align-items-center">
-                <div>
-                  <a href="#" class="view-list px-3 border-right active">All</a>
-                  <a href="#" class="view-list px-3 border-right">Rent</a>
-                  <a href="#" class="view-list px-3">Sale</a>
-                </div>
-
-
-                <div class="select-wrap">
-                  <span class="icon icon-arrow_drop_down"></span>
-                  <select class="form-control form-control-sm d-block rounded-0">
-                    <option value="">Sort by</option>
-                    <option value="">Price Ascending</option>
-                    <option value="">Price Descending</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-    </div>
-
-      
+                  
 
     <div class="site-section site-section-sm bg-light">
       <div class="container">
 
-          <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal">
+          <asp:DataList EditItemStyle-Width="50%"   ID="DataList1" RepeatColumns="3" RepeatDirection="Horizontal"  runat="server" Width="100"  >
 
                <ItemTemplate>
       
@@ -248,28 +215,32 @@
 
             
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-                 <a href="property-details.aspx" class="property-thumbnail">
+        <div class="col-md-6 col-lg-4 mb-4">
+         <%--<div class="property-entry h-100">--%>
+                 <a href="index.aspx" class="property-thumbnail">
                 <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
                 </div>
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <img src="images/img_1.jpg" alt="Image" width="250" >
               </a>
+              
                <div class="p-4 property-body">
                    <table>
-                    <tr><th>Publicaiones <%#Eval("IdPublicacion") %> </th></tr>
-                    <tr><td>Nombre</td><td class="property-title"  ><%#Eval("Nombre") %></td></tr>
-                    <tr><td>Precio</td><td class="property-price text-primary mb-3 d-block text-success" ><%#Eval("Precio") %></td></tr>
-                    <tr><td class="property-title" >Descripcion</td><td class="property-specs-number" ><%#Eval("Descripcion") %></td></tr>
-                    <tr><td class="property-specs" >Telefono</td><td  class="property-specs-number" ><%#Eval("Telefono") %></td></tr>
-                    <tr><td class="property-specs" >Estrato</td><td class="property-specs-number" ><%#Eval("Estrato") %></td></tr>
-                    <tr><td class="property-location d-block mb-3" >Direccion</td><td class="property-icon icon-room" ><%#Eval("Direccion") %></td></tr>
-                    <tr><td class="property-specs" >Numero Habitaciones</td><td class="property-specs-number" ><%#Eval("NumeroHabitaciones") %></td></tr>
+                      <%-- <asp:Label ID="Label1" runat="server" Text=""> <%#Eval("IdPublicacion") %>  </asp:Label>--%>
+                    <%--<tr><th>Publicaiones <%#Eval("IdPublicacion") %> </th></tr>--%>
+                    <h2 class="property-title"><a href="property-details.aspx"> <%#Eval("Nombre") %> </a></h2>
+                    <td  class="property-icon icon-room" ><%#Eval("Direccion") %></td>
+                    <strong class="property-price text-primary mb-3 d-block text-success"><%#Eval("Precio") %></strong>
+                <ul class="property-specs-wrap mb-3 mb-lg-0">
+                   <tr><td class="property-specs" >Estrato</td>
+                   <td class="property-specs-number" ><%#Eval("Estrato") %></td></tr>
+                   <tr><td class="property-specs" >Habitaciones</td>
+                   <td class="property-specs-number" ><%#Eval("NumeroHabitaciones") %></td></tr>
+                </ul>
+                       
                 </table>
 
               </div>
-            </div>
+           <%--</div>--%>
           </div>
 
           
@@ -289,7 +260,7 @@
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
             <div class="site-section-title">
-              <h2>Why Choose Us?</h2>
+              <h2>Why Choose Us?
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</p>
           </div>
