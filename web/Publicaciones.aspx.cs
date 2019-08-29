@@ -15,7 +15,7 @@ namespace web
         {
             DataSet dsListar = new DataSet();
             ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
-            dsListar = miServicio.mtdListarPublicacion();
+            //dsListar = miServicio.mtdListarPublicacion();
             DataList1.DataSource = dsListar;
             DataList1.DataBind();
         }
