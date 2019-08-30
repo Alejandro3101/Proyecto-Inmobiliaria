@@ -72,6 +72,14 @@ namespace Servicio.Datos
 
             return IdUsuario;
         }
+        public int tomarUltimaPublicacion()
+        {
+            SqlCommand cmd = new SqlCommand("select top(1) IdPublicacion from Publicacion order by IdPublicacion desc", objConexion);
+            objConexion.Open();
+            Int32 IdUltimaPublicacion = (Int32)cmd.ExecuteScalar();
+            objConexion.Close();
+            return IdUltimaPublicacion;
+        }
 
     }
 }

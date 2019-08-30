@@ -181,49 +181,6 @@
                   </asp:DropDownList>
               </div>
 
-             
-       <div class ="container">
-            <div class ="row"> 
-                <div class="col-md-4 col.md-offset-4" >
-                    Imagen Agregada:
-                    <br />
-                    <asp:Image ID="ImgPreView" width="100" ImageUrl="https://image.flaticon.com/icons/png/512/14/14232.png" runat="server" />
-                    <br />
-                    <br />
-                    Archivo:
-                    <asp:FileUpload ID="fuploadImagen" accept=".jpg" runat="server" CssClass="form-control"/>
-                    <br />
-                    Titulo de Imagen
-                    
-                    <br />
-                    <asp:Button ID="btnSubir" runat="server" Text="Adjuntar Imagen" CssClass="btn btn-success" OnClick="btnSubir_Click" />
-
-                </div>
-                
-
-            </div>
-            
-            
-            <div class ="row"> 
-                <asp:Repeater ID="Repeater1" runat="server">
-                <ItemTemplate>
-                    <div class="col-md-4">
-
-                        <img class="img-responsive" src="data:image/jpg;base64,<%# Convert.ToBase64String((byte[]) DataBinder.Eval(Container.DataItem ,"Imagen")) %>" />
-                        <%#  DataBinder.Eval(Container.DataItem ,"Titulo") %>
-                        <br />
-                    </div>
-
-
-                </ItemTemplate> 
-
-               </asp:Repeater>
-
-            </div>
-        </div>
-    
-              
-
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="message"  runat="server" >Descripcion Del Inmueble</label> 
@@ -234,7 +191,7 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                    <asp:Button class="btn btn-primary  py-2 px-4 rounded-0" ID="btnPublicar" runat="server" Text="Publicar" OnClick="btnPublicar_Click" />
+                    <asp:Button class="btn btn-primary  py-2 px-4 rounded-0" ID="btnPublicar" runat="server" Text="Siguiente" OnClick="btnPublicar_Click" />
                 </div>
               </div>
 

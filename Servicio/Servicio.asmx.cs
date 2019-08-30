@@ -112,5 +112,19 @@ namespace Servicio
             dsRol = objRol.mtdListarRol();
             return dsRol;
         }
+        [WebMethod]
+        public int mtdRegistrarFoto(string foto, int id)
+        {
+            clFoto objfoto = new clFoto();
+            int result = objfoto.mtdregistrar(foto, id);
+            return result;
+        }
+        [WebMethod]
+        public int mtdUltimaPublicacion()
+        {
+            clConexion objcone = new clConexion();
+            int res = objcone.tomarUltimaPublicacion();
+            return res;
+        }
     }
 }

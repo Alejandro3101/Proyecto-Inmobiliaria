@@ -92,10 +92,24 @@ namespace web.ServicioW {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarRol", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> mtdListarRolAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarFoto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int mtdRegistrarFoto(string foto, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarFoto", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> mtdRegistrarFotoAsync(string foto, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdUltimaPublicacion", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int mtdUltimaPublicacion();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdUltimaPublicacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> mtdUltimaPublicacionAsync();
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -295,7 +309,7 @@ namespace web.ServicioW {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -551,6 +565,22 @@ namespace web.ServicioW {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> mtdListarRolAsync() {
             return base.Channel.mtdListarRolAsync();
+        }
+        
+        public int mtdRegistrarFoto(string foto, int id) {
+            return base.Channel.mtdRegistrarFoto(foto, id);
+        }
+        
+        public System.Threading.Tasks.Task<int> mtdRegistrarFotoAsync(string foto, int id) {
+            return base.Channel.mtdRegistrarFotoAsync(foto, id);
+        }
+        
+        public int mtdUltimaPublicacion() {
+            return base.Channel.mtdUltimaPublicacion();
+        }
+        
+        public System.Threading.Tasks.Task<int> mtdUltimaPublicacionAsync() {
+            return base.Channel.mtdUltimaPublicacionAsync();
         }
     }
 }

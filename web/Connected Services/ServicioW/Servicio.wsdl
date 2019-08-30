@@ -217,6 +217,31 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="mtdRegistrarFoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="foto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarFotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdRegistrarFotoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdUltimaPublicacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdUltimaPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdUltimaPublicacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="mtdListarCategoriaSoapIn">
@@ -285,6 +310,18 @@
   <wsdl:message name="mtdListarRolSoapOut">
     <wsdl:part name="parameters" element="tns:mtdListarRolResponse" />
   </wsdl:message>
+  <wsdl:message name="mtdRegistrarFotoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarFoto" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarFotoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarFotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdUltimaPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdUltimaPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdUltimaPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdUltimaPublicacionResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServicioSoap">
     <wsdl:operation name="mtdListarCategoria">
       <wsdl:input message="tns:mtdListarCategoriaSoapIn" />
@@ -329,6 +366,14 @@
     <wsdl:operation name="mtdListarRol">
       <wsdl:input message="tns:mtdListarRolSoapIn" />
       <wsdl:output message="tns:mtdListarRolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarFoto">
+      <wsdl:input message="tns:mtdRegistrarFotoSoapIn" />
+      <wsdl:output message="tns:mtdRegistrarFotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdUltimaPublicacion">
+      <wsdl:input message="tns:mtdUltimaPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdUltimaPublicacionSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
@@ -432,6 +477,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarFoto">
+      <soap:operation soapAction="http://tempuri.org/mtdRegistrarFoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdUltimaPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdUltimaPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -527,6 +590,24 @@
     </wsdl:operation>
     <wsdl:operation name="mtdListarRol">
       <soap12:operation soapAction="http://tempuri.org/mtdListarRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarFoto">
+      <soap12:operation soapAction="http://tempuri.org/mtdRegistrarFoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdUltimaPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdUltimaPublicacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
