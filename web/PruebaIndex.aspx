@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="web.Formulario_web110" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PruebaIndex.aspx.cs" Inherits="web.Formulario_web113" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!DOCTYPE html>
+
+      <!DOCTYPE html>
 <html>
   <head>
  <Title> SaleYa &mdash; Busqueda de Inmuebles</title>
@@ -145,22 +146,12 @@
               <br />
               <br />
               <br />
-               
-          </form>
-          </div>
-          </div>
-        </div>
-
-                <div class="site-section site-section-sm bg-light">
+               <div class="site-section site-section-sm bg-light">
       <div class="container">
 
           <%--<asp:DataList  EditItemStyle-Width="50%"   ID="DataList1" RepeatColumns="3" RepeatDirection="Horizontal"  runat="server" Width="100" OnSelectedIndexChanged="DataList1_SelectedIndexChanged"  >--%>
           <asp:Repeater ID="Repeater1" runat="server">
                <ItemTemplate>
-
-                  
-
-
       
         <%--<div class="row mb-5">
           <div class="col-md-6 col-lg-4 mb-4">
@@ -199,53 +190,38 @@
           </div>--%>
 
             
-                   <div class="site-section site-section-sm bg-light">
-      <div class="container">
-      
-        
-          <div class="row mb-4">
-          <div class="col-md-12">
-            <div class="property-entry horizontal d-lg-flex">
 
-              <a  class="property-thumbnail h-100">
+        <div class="col-md-6 col-lg-4 mb-4">
+         <%--<div class="property-entry h-100">--%>
+                 <a href="index.aspx" class="property-thumbnail">
                 <div class="offer-type-wrap">
-                  
                 </div>
-                <img src="PublicacionesImagenes/<%#Eval("Foto") %>" alt="Image" class="img-fluid">
+                <img src="PublicacionesIma" alt="Image" width="250" >
               </a>
-
-              <div class="p-4 property-body">
-                <h2 class="property-title"> <%#Eval("Nombre") %></a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <%#Eval("Direccion") %></span>
-                <strong class="property-price text-primary mb-3 d-block text-success"><%#Eval("Precio") %></strong>
-                <p><%#Eval("Descripcion") %></p>
+              
+               <div class="p-4 property-body">
+                   <table>
+                    <asp:Label ID="lblIdPublicacion" runat="server" Text=""> <%#Eval("Foto") %>  </asp:Label>
+                    <%--<tr><th>Publicaiones <%#Eval("IdPublicacion") %> </th></tr>--%>
+                    <h2 class="property-title"><a href="property-details.aspx"> <%#Eval("Nombre") %> </a></h2>
+                    <td  class="property-icon icon-room" ><%#Eval("Direccion") %></td>
+                    <strong class="property-price text-primary mb-3 d-block text-success"><%#Eval("Precio") %></strong>
                 <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Telefono</span>
-                    <span class="property-specs-number"><%#Eval("Telefono") %></span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">Habitaciones</span>
-                    <span class="property-specs-number"><%#Eval("NumeroHabitaciones") %></span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">Estrato</span>
-                    <span class="property-specs-number"><%#Eval("Estrato") %></span>
-                    
-                  </li>
+                   <tr><td class="property-specs" >Estrato</td>
+                   <td class="property-specs-number" ><%#Eval("Estrato") %></td></tr>
+                   <tr><td class="property-specs" >Habitaciones</td>
+                   <td class="property-specs-number" ><%#Eval("NumeroHabitaciones") %></td></tr>
                 </ul>
+                </table>
+                   <div class="col-md-6 col-lg-4">
+                           <a class="service text-center">
+                               <button type="button" class="btn btn-outline-primary" ID="btnVerDetalles" runat="server" onserverclick="btnVerDetalles_Click" >Ver Detalles</button>
+                           </a>
+                       </div>
+
               </div>
-
-            </div>
+           <%--</div>--%>
           </div>
-        </div>
-
-
-
-
-        
 
           
      </ItemTemplate>
@@ -265,6 +241,12 @@
 
 
 
+          </form>
+          </div>
+          </div>
+        </div>
+
+                
 
     <div class="site-section">
         <div class="container">
@@ -404,4 +386,5 @@
     
   </body>
 </html>
+
 </asp:Content>

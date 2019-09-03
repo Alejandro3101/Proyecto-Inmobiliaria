@@ -145,27 +145,27 @@ namespace web
 
         protected void btnPublicar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AgregarImgPublicacion.aspx");
-            //ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
-            //objPublicacion.Nombre = txtNombre.Text;
-            //objPublicacion.Precio = int.Parse(txtPrecio.Text);
-            //objPublicacion.Descripcion = txtDescripcion.Text;
-            //objPublicacion.Telefono = txtTelefono.Text;
-            //objPublicacion.Estrato = cmbEstrato.SelectedValue.ToString();
-            //objPublicacion.Direccion = txtDescripcion.Text;
-            //objPublicacion.Habitaciones = int.Parse(cmbHabitacion.SelectedValue.ToString());
-            //objPublicacion.IdUsuario = int.Parse(Application["IdUsuario"].ToString());
-            //objPublicacion.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
-            //objPublicacion.IdEstado = 1;
-            //objPublicacion.IdCiudad = int.Parse(cmbCiudad.SelectedValue.ToString());
-            //objPublicacion.IdCategoria = int.Parse(cmbCategoria.SelectedValue.ToString());
-            //int result = miServicio.mtdRegistrarPublicacion(objPublicacion);
-            //if (result > 0)
-            //{
+           
+            ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
+            objPublicacion.Nombre = txtNombre.Text;
+            objPublicacion.Precio = txtPrecio.Text;
+            objPublicacion.Descripcion = txtDescripcion.Text;
+            objPublicacion.Telefono = txtTelefono.Text;
+            objPublicacion.Estrato = cmbEstrato.SelectedValue.ToString();
+            objPublicacion.Direccion = txtDireccion.Text;
+            objPublicacion.Habitaciones = int.Parse(cmbHabitacion.SelectedValue.ToString());
+            objPublicacion.IdUsuario = int.Parse(Application["IdUsuario"].ToString());
+            objPublicacion.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
+            objPublicacion.IdEstado = 1;
+            objPublicacion.IdCiudad = int.Parse(cmbCiudad.SelectedValue.ToString());
+            objPublicacion.IdCategoria = int.Parse(cmbCategoria.SelectedValue.ToString());
+            int result = miServicio.mtdRegistrarPublicacion(objPublicacion);
+            if (result > 0)
+            {
 
-            //    Response.Redirect("AgregarImgPublicacion.aspx");
+                Response.Redirect("AgregarImgPublicacion.aspx");
 
-            //}
+            }
         }
 
         protected void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)

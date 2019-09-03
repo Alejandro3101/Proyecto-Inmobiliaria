@@ -11,7 +11,7 @@ namespace Servicio.Datos
 
         public int IdPublicacion { get; set; }
         public String Nombre { get; set; }
-        public float Precio { get; set; }
+        public String Precio { get; set; }
         public String Descripcion { get; set; }
         public String Telefono { get; set; }
         public String Estrato { get; set; }
@@ -35,7 +35,7 @@ namespace Servicio.Datos
 
         public DataSet mtdListar2( clPublicacion objPubli )
         {
-            string consulta = "select IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo where Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
+            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Foto.Foto from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
             DataSet dsUsuario = new DataSet();
             clConexion objConexion = new clConexion();
             dsUsuario = objConexion.mtdDesconectado(consulta);

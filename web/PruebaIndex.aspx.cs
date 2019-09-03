@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace web
 {
-    public partial class Formulario_web110 : System.Web.UI.Page
+    public partial class Formulario_web113 : System.Web.UI.Page
     {
 
         ServicioW.ServicioSoapClient miServicio = new ServicioW.ServicioSoapClient();
@@ -30,7 +30,7 @@ namespace web
             DataSet dsTipo = new DataSet();
             dsTipo = miServicio.mtdListarTipo();
             int C = dsTipo.Tables["tblDatos"].Rows.Count;
-            
+
             cmbBuscarTipo.DataSource = dsTipo.Tables["tblDatos"];
             cmbBuscarTipo.DataTextField = "Tipo";
             cmbBuscarTipo.DataValueField = "IdTipo";
@@ -61,27 +61,7 @@ namespace web
             cmbBuscarCategoria.DataBind();
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            DataSet dsListar = new DataSet();
-            ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
-            objPublicacion.IdTipo = int.Parse(cmbBuscarTipo.SelectedValue.ToString());
-            objPublicacion.IdCiudad = int.Parse(cmbBuscarCiudad.SelectedValue.ToString());
-            objPublicacion.IdCategoria = int.Parse(cmbBuscarCategoria.SelectedValue.ToString());
-            dsListar = miServicio.mtdListarPublicaciones2(objPublicacion);
-            Repeater1.DataSource = dsListar;
-            Repeater1.DataBind();
-        }
 
-        protected void btnVerDetalles_Click(object sender, EventArgs e)
-        {
 
-            //Response.Redirect("Detalles-Propiedad.aspx?parametro=" +);
-        }
-
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
