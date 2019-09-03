@@ -12,13 +12,15 @@ namespace web
     {
 
         ServicioW.ServicioSoapClient miServicioW = new ServicioW.ServicioSoapClient();
-        protected void Page_Load(object sender, EventArgs e)
 
+        protected void Page_Init(object sender, EventArgs e)
         {
             mtdCargarRol();
+        }
 
-
-
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            
         }
 
         public void mtdCargarRol()
