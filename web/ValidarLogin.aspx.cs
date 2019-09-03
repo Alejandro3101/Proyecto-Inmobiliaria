@@ -20,7 +20,7 @@ namespace web
                 Session["Usuario"] = usu;
                 Session["Contrasena"] = con; 
                 Application["IdUsuario"] = res;
-                Response.Redirect("index.aspx"); 
+                Response.Redirect("indexRegistrado.aspx"); 
             }
             else
             {
