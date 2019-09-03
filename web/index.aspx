@@ -69,6 +69,7 @@
 
                   </li>
                     <li><a href="RegistarUsuario.aspx">Registrarse</a></li>
+                     <li><a href="Login.aspx">Iniciar Sesion</a></li>
                 </ul>
               </nav>
             </div>
