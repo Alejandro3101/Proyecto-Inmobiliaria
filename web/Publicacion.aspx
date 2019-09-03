@@ -168,16 +168,6 @@
                       <asp:ListItem>8</asp:ListItem>
                       <asp:ListItem>9</asp:ListItem>
                       <asp:ListItem>10</asp:ListItem>
-                      <asp:ListItem>11</asp:ListItem>
-                      <asp:ListItem>12</asp:ListItem>
-                      <asp:ListItem>13</asp:ListItem>
-                      <asp:ListItem>14</asp:ListItem>
-                      <asp:ListItem>15</asp:ListItem>
-                      <asp:ListItem>16</asp:ListItem>
-                      <asp:ListItem>17</asp:ListItem>
-                      <asp:ListItem>18</asp:ListItem>
-                      <asp:ListItem>19</asp:ListItem>
-                      <asp:ListItem>20</asp:ListItem>
                   </asp:DropDownList>
               </div>
 
@@ -197,22 +187,6 @@
 
   
             </form>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="p-4 mb-3 bg-white">
-              <h3 class="h6 text-black mb-3 text-uppercase">Contact Info</h3>
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
-
-              <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
-
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
-
-            </div>
-            
           </div>
         </div>
       </div>

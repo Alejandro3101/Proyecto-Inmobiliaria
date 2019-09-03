@@ -69,7 +69,7 @@
 
                   </li>
                   <li><a href="Publicacion.aspx">Publicar Inmueble</a></li>
-                    <li><a href="Login.aspx">Login</a></li>
+                    <li><a href="Login.aspx">Cerrar Sesion</a></li>
                 </ul>
               </nav>
             </div>
@@ -89,7 +89,7 @@
               <span class="d-inline-block bg-success text-white px-3 mb-3 property-offer-type rounded">Para Aquiler</span>
               <h1 class="mb-2">Sogamoso</h1>
               <p class="mb-5"><strong class="h2 text-success font-weight-bold">$650.000.000</strong></p>
-              <p><a href="#" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 btn-2">Ver Detalles</a></p>
+              
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@
               <span class="d-inline-block bg-danger text-white px-3 mb-3 property-offer-type rounded">Para Venta</span>
               <h1 class="mb-2">Duitama</h1>
               <p class="mb-5"><strong class="h2 text-success font-weight-bold">$200.000.000</strong></p>
-              <p><a href="#" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 btn-2">Ver Detalles</a></p>
+              
             </div>
           </div>
         </div>

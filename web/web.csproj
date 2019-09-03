@@ -82,7 +82,7 @@
     <Content Include="PublicacionesImagenes\manzanas-podrida.jpg" />
     <Content Include="PublicacionesImagenes\maxresdefault.jpg" />
     <Content Include="PublicacionesImagenes\ova-de-black-clover-destacada.jpg" />
-    <Content Include="Usuarios.aspx" />
+    <Content Include="RegistarUsuario.aspx" />
     <Content Include="imglogin\fondo_login.jpg" />
     <Content Include="imglogin\logosaleya.png" />
     <Content Include="Login.aspx" />
@@ -359,12 +359,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios.aspx.cs">
-      <DependentUpon>Usuarios.aspx</DependentUpon>
+    <Compile Include="RegistarUsuario.aspx.cs">
+      <DependentUpon>RegistarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Usuarios.aspx.designer.cs">
-      <DependentUpon>Usuarios.aspx</DependentUpon>
+    <Compile Include="RegistarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="ValidarLogin.aspx.cs">
       <DependentUpon>ValidarLogin.aspx</DependentUpon>

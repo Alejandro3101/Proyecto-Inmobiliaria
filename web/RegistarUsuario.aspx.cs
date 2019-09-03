@@ -51,7 +51,7 @@ namespace web
             if (result > 0)
             {
 
-                Response.Redirect("index.aspx");
+                Response.Redirect("Login.aspx");
 
             }
         }
