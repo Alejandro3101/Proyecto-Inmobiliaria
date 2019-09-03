@@ -19,7 +19,6 @@ namespace web
             mtdCargarCategoria();
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -61,7 +60,27 @@ namespace web
             cmbBuscarCategoria.DataBind();
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataSet dsListar = new DataSet();
+            ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
+            objPublicacion.IdTipo = int.Parse(cmbBuscarTipo.SelectedValue.ToString());
+            objPublicacion.IdCiudad = int.Parse(cmbBuscarCiudad.SelectedValue.ToString());
+            objPublicacion.IdCategoria = int.Parse(cmbBuscarCategoria.SelectedValue.ToString());
+            dsListar = miServicio.mtdListarPublicaciones2(objPublicacion);
+            Repeater1.DataSource = dsListar;
+            Repeater1.DataBind();
+        }
 
+        protected void btnVerDetalles_Click(object sender, EventArgs e)
+        {
 
+            //Response.Redirect("Detalles-Propiedad.aspx?parametro=" +);
+        }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
