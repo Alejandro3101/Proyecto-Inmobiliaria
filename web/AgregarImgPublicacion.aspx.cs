@@ -14,7 +14,9 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ServicioW.ServicioSoapClient mi = new ServicioW.ServicioSoapClient();
+            int ultimaPublicacion = mi.mtdUltimaPublicacion();
+            lblId.Text = ultimaPublicacion.ToString();
         }
         protected void btnSubir_Click(object sender, EventArgs e)
         {
@@ -32,9 +34,9 @@ namespace web
                 fuploadImagen.SaveAs(Server.MapPath("~/PublicacionesImagenes/" + fuploadImagen.FileName));
 
                 ServicioW.ServicioSoapClient mi = new ServicioW.ServicioSoapClient();
-                int ultimaPublicacion = mi.mtdUltimaPublicacion();
+                
 
-                mi.mtdRegistrarFoto(nom, ultimaPublicacion);
+                mi.mtdRegistrarFoto(nom, int.Parse(lblId.Text));
             }
             else
             {

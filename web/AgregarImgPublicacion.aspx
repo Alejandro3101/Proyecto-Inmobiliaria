@@ -14,6 +14,7 @@
         <div class ="container">
             <div class ="row"> 
                 <div class="col-md-4 col.md-offset-4" >
+                    <asp:Label ID="lblId" runat="server" Text="Label" Visible="False"></asp:Label>
                     <br />
                     Archivo:
                     <asp:FileUpload ID="fuploadImagen" accept=".jpg" runat="server" CssClass="form-control"/>
