@@ -215,9 +215,9 @@
               </a>
 
               <div class="p-4 property-body">
-                <h2 class="property-title"> <%#Eval("Nombre") %></a></h2>
+                <h1 class="property-title"> &nbsp &nbsp<%#Eval("Nombre") %> </h1> 
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <%#Eval("Direccion") %></span>
-                <strong class="property-price text-primary mb-3 d-block text-success"><%#Eval("Precio") %></strong>
+                <strong class="property-price text-primary mb-3 d-block text-success">$ <%#Eval("Precio") %></strong>
                 <p><%#Eval("Descripcion") %></p>
                 <ul class="property-specs-wrap mb-3 mb-lg-0">
                   <li>
@@ -227,15 +227,20 @@
                   </li>
                   <li>
                     <span class="property-specs">Habitaciones</span>
-                    <span class="property-specs-number"><%#Eval("NumeroHabitaciones") %></span>
+                    <span class="property-specs-number">&nbsp &nbsp &nbsp &nbsp  <%#Eval("NumeroHabitaciones") %></span>
                     
                   </li>
                   <li>
                     <span class="property-specs">Estrato</span>
-                    <span class="property-specs-number"><%#Eval("Estrato") %></span>
+                    <span class="property-specs-number">&nbsp <%#Eval("Estrato") %></span>
+
+
+                      
                     
                   </li>
                 </ul>
+
+                  <button > MAS DETALES</button>
               </div>
 
             </div>

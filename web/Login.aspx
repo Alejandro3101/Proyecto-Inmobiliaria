@@ -19,17 +19,24 @@
     <form class="login100-form validate-form p-b-33 p-t-5" action="ValidarLogin.aspx" method="post" runat="server">
 
 					<div >
-                        <asp:TextBox ID="txtusuarioo" runat="server" class="input100" placeholder="Usuario" name="txtusuario"></asp:TextBox>
+                        <asp:TextBox ID="txtusuarioo" runat="server"  class="input100" placeholder="Usuario" name="txtusuario"></asp:TextBox>
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtcontrasena" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red" ></asp:RequiredFieldValidator>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<asp:TextBox ID="txtcontrasena" runat="server" class="input100" placeholder="Contrasena" name="txtcontrasena"></asp:TextBox>
+						<asp:TextBox ID="txtcontrasena" runat="server"  type="Password" class="input100" placeholder="Contrasena" name="txtcontrasena"></asp:TextBox>
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtcontrasena" ErrorMessage="EL CAMPO ESTA VACIO" ForeColor="Red" ></asp:RequiredFieldValidator>
 					</div>
 					<div >
-						<button class="jhonatan" type="boton";>
-							Iniciar Sesion
+
+
+
+
+
+						<asp:Button class="jhonatan" type="boton"  runat="server" Text="Iniciar Sesion" />
+						
 						
 
 				</form>
