@@ -146,16 +146,11 @@
               <br />
               <br />
                
-          </form>
-          </div>
-          </div>
-        </div>
-
-      <div class="site-section site-section-sm bg-light">
+               <div class="site-section site-section-sm bg-light">
          <div class="container">
 
           
-          <asp:Repeater ID="Repeater1" runat="server">
+          <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
                <ItemTemplate>
            
      <div class="site-section site-section-sm bg-light">
@@ -172,7 +167,7 @@
               </a>
                 <asp:Label ID="lblId" runat="server" ><%#Eval("IdPublicacion") %></asp:Label>
               <div class="p-4 property-body">
-                <h1 class="property-title"> &nbsp &nbsp<%#Eval("Nombre") %> </h1> 
+                <h1 class="property-title"> &nbsp &nbsp<%#Eval("Nombre") %></h1> 
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <%#Eval("Direccion") %></span>
                 <strong class="property-price text-primary mb-3 d-block text-success">$ <%#Eval("Precio") %></strong>
                 <p><%#Eval("Descripcion") %></p>
@@ -193,7 +188,7 @@
                   </li>
                 </ul>
 
-                  <button > MAS DETALES</button>
+                  <asp:Button ID="btnVerDetalles" runat="server" Text="Ver Detalles" OnClick="btnDetalles_Click" />
               </div>
 
             </div>
@@ -205,6 +200,13 @@
     </asp:Repeater>
       </div>
     </div>
+
+          </form>
+          </div>
+          </div>
+        </div>
+
+     
 
     <div class="site-section">
         <div class="container">
