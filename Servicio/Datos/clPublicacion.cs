@@ -42,6 +42,14 @@ namespace Servicio.Datos
             return dsUsuario;
         }
 
+        public DataSet mtdListarPublicacionU(clPublicacion objPublica)
+        {
+            string consulta = "select Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo  from Publicacion where IdPublicacion = " + objPublica.IdPublicacion + " ";
+            DataSet dsPublicacion = new DataSet();
+            clConexion objConexion = new clConexion();
+            dsPublicacion = objConexion.mtdDesconectado(consulta);
+            return dsPublicacion;
+        }
 
         public int mtdRegistrar(clPublicacion objPubli)
         {
