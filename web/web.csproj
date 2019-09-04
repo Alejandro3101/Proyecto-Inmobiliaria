@@ -71,6 +71,7 @@
     <Content Include="AgregarImgPublicacion.aspx" />
     <Content Include="csslogin\master.css" />
     <Content Include="Detalles-Propiedad.aspx" />
+    <Content Include="MisPublicaciones.aspx" />
     <Content Include="indexRegistrado.aspx" />
     <Content Include="images\ova-de-black-clover-destacada.jpg" />
     <Content Include="Publicaciones.aspx" />
@@ -86,6 +87,17 @@
     <Content Include="imglogin\fondo_login.jpg" />
     <Content Include="imglogin\logosaleya.png" />
     <Content Include="Login.aspx" />
+    <Content Include="bdSaleYaDataSet.xsc">
+      <DependentUpon>bdSaleYaDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="bdSaleYaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bdSaleYaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bdSaleYaDataSet.xss">
+      <DependentUpon>bdSaleYaDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioW\Servicio.disco" />
     <None Include="Connected Services\ServicioW\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioW\configuration.svcinfo" />
@@ -309,6 +321,11 @@
     <Compile Include="AgregarImgPublicacion.aspx.designer.cs">
       <DependentUpon>AgregarImgPublicacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bdSaleYaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdSaleYaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="blog.aspx.cs">
       <DependentUpon>blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +358,13 @@
     </Compile>
     <Compile Include="Detalles-Propiedad.aspx.designer.cs">
       <DependentUpon>Detalles-Propiedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisPublicaciones.aspx.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisPublicaciones.aspx.designer.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="indexRegistrado.aspx.cs">
       <DependentUpon>indexRegistrado.aspx</DependentUpon>
@@ -443,7 +467,9 @@
       <Name>Servicio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="ReportePubli.rdlc" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

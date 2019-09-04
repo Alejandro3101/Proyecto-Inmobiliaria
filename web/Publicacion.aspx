@@ -58,7 +58,7 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                   <li class="active">
-                    <a href="index.aspx">Inicio</a>
+                    <a href="indexRegistrado.aspx">Inicio</a>
                   </li>
                   
                 </ul>
