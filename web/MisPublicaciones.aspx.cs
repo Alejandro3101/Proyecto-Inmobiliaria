@@ -58,7 +58,7 @@ namespace web
         {
             int pos = GridView1.SelectedIndex;
             String Valor = GridView1.Rows[pos].Cells[1].Text;
-
+            Response.Write("<script>window.open ('Editar.aspx?id=" + Valor + "','_blank');</script>");
         }
     }
 }

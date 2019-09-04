@@ -123,7 +123,7 @@
 
                 <div class="form-group">
                 <label class="font-weight-bold" for="email">Tipo</label>
-                    <asp:DropDownList class="form-control"  id="cmbTipo" runat="server" OnSelectedIndexChanged="cmbTipo_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:DropDownList class="form-control"  id="cmbTipo" runat="server"></asp:DropDownList>
                 </div>
 
                 <div class="form-group">

@@ -26,7 +26,9 @@ namespace Servicio.Datos
 
         public DataSet mtdListar(clPublicacion objPublica )
         {
-            string consulta = "select * from Publicacion where IdPublicacion = "+objPublica.IdPublicacion+" ";
+            string consulta = "select Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado" +
+                "  from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad" +
+                " inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Estado on Estado.IdEstado = Publicacion.IdEstado where IdPublicacion = " + objPublica.IdPublicacion+" ";
             DataSet dsPublicacion = new DataSet();
             clConexion objConexion = new clConexion();
             dsPublicacion = objConexion.mtdDesconectado(consulta);

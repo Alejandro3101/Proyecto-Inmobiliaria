@@ -14,14 +14,14 @@ namespace web
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            mtdCargarTipo();
-            mtdCargarCiudad();
-            mtdCargarCategoria();
+            //mtdCargarTipo();
+            //mtdCargarCiudad();
+            //mtdCargarCategoria();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            mtdCargarDatos();
         }
 
         protected void btnPublicar_Click(object sender, EventArgs e)
@@ -60,6 +60,31 @@ namespace web
             cmbTipo.DataValueField = "IdTipo";
             cmbTipo.DataBind();
         }
+
+        public void mtdCargarDatos()
+        {
+            string Valor = Request.QueryString["id"].ToString();
+            DataSet dsListar = new DataSet();
+            ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
+            objPublicacion.IdPublicacion = int.Parse(Valor.ToString());
+            dsListar = miServicio.mtdListarPublicacion(objPublicacion);
+            
+            txtNombre.Text = dsListar.Tables["tblDatos"].Rows[0]["Nombre"].ToString();
+            txtPrecio.Text = dsListar.Tables["tblDatos"].Rows[0]["Precio"].ToString();
+            txtDireccion.Text = dsListar.Tables["tblDatos"].Rows[0]["Direccion"].ToString();
+            txtTelefono.Text = dsListar.Tables["tblDatos"].Rows[0]["Telefono"].ToString();
+            cmbTipo.Text = dsListar.Tables["tblDatos"].Rows[0]["Tipo"].ToString();
+            cmbEstado.Text = dsListar.Tables["tblDatos"].Rows[0]["Estado"].ToString();
+            cmbHabitacion.Text = dsListar.Tables["tblDatos"].Rows[0]["NumeroHabitaciones"].ToString();
+            cmbEstrato.Text = dsListar.Tables["tblDatos"].Rows[0]["Estrato"].ToString();
+            txtDescripcion.Text = dsListar.Tables["tblDatos"].Rows[0]["Descripcion"].ToString();
+            
+            
+        }
+
+
+
+
 
         public void mtdCargarCiudad()
         {
