@@ -65,7 +65,7 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                   <li class="active">
-                    <a href="index.html">Inicio</a>
+                    <a href="indexRegistrado.aspx">Inicio</a>
 
                   </li>
                   <li><a href="Publicacion.aspx">Publicar Inmueble</a></li>
