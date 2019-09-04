@@ -69,6 +69,7 @@
 
                   </li>
                   <li><a href="Publicacion.aspx">Publicar Inmueble</a></li>
+                     <li><a href="MisPublicaciones.aspx">Mis Publicaciones</a></li>
                     <li><a href="Login.aspx">Cerrar Sesion</a></li>
                 </ul>
               </nav>

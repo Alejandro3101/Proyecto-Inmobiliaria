@@ -71,6 +71,7 @@
     <Content Include="AgregarImgPublicacion.aspx" />
     <Content Include="csslogin\master.css" />
     <Content Include="Detalles-Propiedad.aspx" />
+    <Content Include="MisPublicaciones.aspx" />
     <Content Include="indexRegistrado.aspx" />
     <Content Include="images\ova-de-black-clover-destacada.jpg" />
     <Content Include="Publicaciones.aspx" />
@@ -357,6 +358,13 @@
     </Compile>
     <Compile Include="Detalles-Propiedad.aspx.designer.cs">
       <DependentUpon>Detalles-Propiedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisPublicaciones.aspx.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisPublicaciones.aspx.designer.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="indexRegistrado.aspx.cs">
       <DependentUpon>indexRegistrado.aspx</DependentUpon>
