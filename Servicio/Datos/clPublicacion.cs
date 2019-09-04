@@ -35,7 +35,10 @@ namespace Servicio.Datos
 
         public DataSet mtdListar2( clPublicacion objPubli )
         {
-            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Foto.Foto from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
+            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Foto.Foto " +
+                "from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria " +
+                "inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo" +
+                " inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
             DataSet dsUsuario = new DataSet();
             clConexion objConexion = new clConexion();
             dsUsuario = objConexion.mtdDesconectado(consulta);
@@ -44,11 +47,24 @@ namespace Servicio.Datos
 
         public DataSet mtdListarPublicacionU(clPublicacion objPublica)
         {
-            string consulta = "select Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo  from Publicacion where IdPublicacion = " + objPublica.IdPublicacion + " ";
+            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado" +
+                "  from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad" +
+                " inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Estado on Estado.IdEstado = Publicacion.IdEstado  where IdUsuario = " + objPublica.IdUsuario +"";
             DataSet dsPublicacion = new DataSet();
             clConexion objConexion = new clConexion();
             dsPublicacion = objConexion.mtdDesconectado(consulta);
             return dsPublicacion;
+        }
+
+        public DataSet mtdListarPublicacioneU2(clPublicacion objPubli)
+        {
+            string consulta = "select Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado " +
+                "from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad " +
+                "inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Estado on Estado.IdEstado = Publicacion.IdEstado where Publicacion.IdCategoria = " + objPubli.IdCategoria + "";
+            DataSet dsUsuario = new DataSet();
+            clConexion objConexion = new clConexion();
+            dsUsuario = objConexion.mtdDesconectado(consulta);
+            return dsUsuario;
         }
 
         public int mtdRegistrar(clPublicacion objPubli)
