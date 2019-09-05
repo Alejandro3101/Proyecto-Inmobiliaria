@@ -212,9 +212,10 @@
             <div class="row justify-content-center">
                 <div class="col-md-7 text-center">
                     <div class="site-section-title">
-                        <h2>¿Por qué nosotros?
+                        <h2>¿Por qué nosotros?</h2>
                     </div>
-                    <p>Somos intermediarios para la venta de inmuebles,En nuestra pagina encontraras facilidad para comprar tu casa o apartamento , Y si quieres vender tu inmueble tambien tambien lo puedes hacer muy facilmente, Las inmobiliarias pueden registrar varios inmuebles a la vez a nombre de ellos.</p>
+                         <p>En SaleYa podras publicar inmuebles de forma rapida y segura , la cual facilitara la venta de tu inmueble desde cualquier parte del departamento de boyaca</p>
+
                 </div>
 
             </div>
@@ -226,7 +227,8 @@
                         <div class="site-section-title">
                             <h2>¿Quienes Somos?</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</>
+                           <p>Somos intermediarios para la venta de inmuebles,En nuestra pagina encontraras facilidad para comprar tu casa o apartamento , Y si quieres vender tu inmueble tambien lo puedes hacer muy facilmente, Las inmobiliarias pueden registrar varios inmuebles a la vez a nombre de ellos</p>
+
                     </div>
                 </div>
             </div>
@@ -237,7 +239,7 @@
                     <a href="#" class="service text-center">
                         <span class="icon flaticon-house"></span>
                         <h2 class="service-heading">Inmobiliarias</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
+                        <p>Las inmobiliarias son parte importante en SaleYa, Son aquellas que promueven la venta de varios inmuebles y con facilidades para las personas</p>
                         
                     </a>
                 </div>
@@ -245,7 +247,7 @@
                     <a href="#" class="service text-center">
                         <span class="icon flaticon-sold"></span>
                         <h2 class="service-heading">Personas</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
+                        <p>Las personas son una parte fundamental en SaleYa , Son aquellas que con publicaciones de inmuebles facilitan la vida de muchas personas</p>
                         
                     </a>
                 </div>
@@ -253,7 +255,7 @@
                     <a href="#" class="service text-center">
                         <span class="icon flaticon-camera"></span>
                         <h2 class="service-heading">Seguridad</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
+                        <p>En SaleYa podras estar 100% seguro cuando publicas un inmueble , cuanta con proteccion de datos para que solo las personas interesadas en tu inmueble puedan contactarte</p>
                         
                     </a>
                 </div>
@@ -269,38 +271,15 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="mb-5">
-                        <h3 class="footer-heading mb-4">About Homeland</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+                        <h3 class="footer-heading mb-4">SaleYa</h3>
+                        <p>Sofware diseñado para todas las personas o/u inmobiliarias que tienen un inmueble a a venta en venta o arriendo , con SaleYa podras subir ese inmueble para que otra persona que esta interesada en comprar te pueda contactar de una forma facil y segura</p>
                     </div>
 
 
                 </div>
+                
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="row mb-5">
-                        <div class="col-md-12">
-                            <h3 class="footer-heading mb-4">Navigations</h3>
-                        </div>
-                        <div class="col-md-6 col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Buy</a></li>
-                                <li><a href="#">Rent</a></li>
-                                <li><a href="#">Properties</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Terms</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h3 class="footer-heading mb-4">Follow Us</h3>
+                    <h3 class="footer-heading mb-4">Contactanos</h3>
                     <div>
                         <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                         <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
@@ -317,7 +296,7 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
                         <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados |  <i class="icon-heart text-danger" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank">SaleYa</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
