@@ -6,6 +6,10 @@
 <html>
   <head>
  <Title> SaleYa &mdash; Busqueda de Inmuebles</title>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -70,7 +74,38 @@
                   </li>
                   <li><a href="Publicacion.aspx">Publicar Inmueble</a></li>
                      <li><a href="MisPublicaciones.aspx">Mis Publicaciones</a></li>
-                    <li><a href="Login.aspx">Cerrar Sesion</a></li>
+
+                    <input type="button" value="Cerrar Sesion" onclick="EventoAlert()"/>
+               
+                    <script> 
+
+
+	                    function EventoAlert(){
+
+                    Swal.fire({
+                      title: 'Seguro desea Cerrar Sesion',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Salir'
+                    }).then((result) => {
+                        if (result.value) {
+
+  	                   window.location = "index.aspx";
+    
+                      }
+                    });
+
+
+	                    }
+
+
+
+                    </script>
+
+
+
+                    
                 </ul>
               </nav>
             </div>
@@ -194,7 +229,7 @@
                   </li>
                 </ul>
 
-                  <button > MAS DETALES</button>
+                  <%--<button > MAS DETALES</button>--%>
               </div>
 
             </div>

@@ -74,22 +74,24 @@ namespace web
             Repeater1.DataBind();
             
         }
-        
-        protected void btnDetalles_Click(object sender, EventArgs e)
-        {
-           
-         
-            //Response.Redirect("Detalles-Propiedad.aspx?parametro=" +Repeater1.ItemTemplate);
-        }
 
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        public static string somedata;
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            switch (e.CommandName)
+            {
+                case "Click":
+                    somedata = e.CommandArgument.ToString();
+                    break;
+            }
+        }
+
+        protected void Repeater1_ItemDataBound(object source, RepeaterItemEventArgs e)
+        {
+            Button btnVerDetalles = e.Item.FindControl("btnVerDetalles") as Button;
+            btnVerDetalles.OnClientClick = String.Format("showValue('{0}');", btnVerDetalles.CommandArgument);
 
         }
+
     }
 }

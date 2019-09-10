@@ -123,12 +123,15 @@
 
                 <div class="form-group">
                 <label class="font-weight-bold" for="email">Tipo</label>
-                    <asp:DropDownList class="form-control"  id="cmbTipo" runat="server"></asp:DropDownList>
+                    <br />
+                    <asp:RadioButton ID="rbdArriendo" Text="Arriendo"  runat="server" /> &nbsp &nbsp &nbsp &nbsp <asp:RadioButton ID="rbdVenta" Text="Venta" runat="server" />
                 </div>
 
                 <div class="form-group">
                 <label class="font-weight-bold" for="email">Estado</label>
-                    <asp:DropDownList class="form-control"  id="cmbEstado" runat="server"></asp:DropDownList>
+                    <br />
+                    <asp:CheckBox ID="cbxDisponible" Text=" Disponible " runat="server" /> &nbsp &nbsp &nbsp &nbsp  <asp:CheckBox ID="cbxNoDisponible" Text=" No Disponible " runat="server" OnCheckedChanged="cbxNoDisponible_CheckedChanged" />
+                    <asp:RadioButton ID="rbdDiponible" Text="Disponible"  runat="server" /> &nbsp &nbsp &nbsp &nbsp <asp:RadioButton ID="rbdNoDisponible" Text="No Disponible" runat="server" OnCheckedChanged="rbdNoDisponible_CheckedChanged" />
               </div>
 
                 <div class="form-group">

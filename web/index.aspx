@@ -146,11 +146,18 @@
               <br />
               <br />
                
-               <div class="site-section site-section-sm bg-light">
+               
+
+          </form>
+          </div>
+          </div>
+        </div>
+
+     <div class="site-section site-section-sm bg-light">
          <div class="container">
 
           
-          <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+          <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand" OnItemDataBound="Repeater1_ItemDataBound">
                <ItemTemplate>
            
      <div class="site-section site-section-sm bg-light">
@@ -188,7 +195,7 @@
                   </li>
                 </ul>
 
-                  <asp:Button ID="btnVerDetalles" runat="server" Text="Ver Detalles" OnClick="btnDetalles_Click" />
+                <asp:Button ID="btnVerDetalles" runat="server" Text="Ver Detalles" CommandName="Click" CommandArgument='<%#Eval("IdPublicacion") %>' /> </button>
               </div>
 
             </div>
@@ -200,13 +207,6 @@
     </asp:Repeater>
       </div>
     </div>
-
-          </form>
-          </div>
-          </div>
-        </div>
-
-     
 
     <div class="site-section">
         <div class="container">

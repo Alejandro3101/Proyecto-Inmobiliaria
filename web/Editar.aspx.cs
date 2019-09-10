@@ -36,7 +36,6 @@ namespace web
             objPublicacion.Direccion = txtDireccion.Text;
             objPublicacion.Habitaciones = int.Parse(cmbHabitacion.SelectedValue.ToString());
             objPublicacion.IdUsuario = int.Parse(Application["IdUsuario"].ToString());
-            objPublicacion.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
             objPublicacion.IdEstado = 1;
             objPublicacion.IdCiudad = int.Parse(cmbCiudad.SelectedValue.ToString());
             objPublicacion.IdCategoria = int.Parse(cmbCategoria.SelectedValue.ToString());
@@ -49,17 +48,17 @@ namespace web
             }
         }
 
-        public void mtdCargarTipo()
-        {
-            DataSet dsTipo = new DataSet();
-            dsTipo = miServicio.mtdListarTipo();
-            int C = dsTipo.Tables["tblDatos"].Rows.Count;
+        //public void mtdCargarTipo()
+        //{
+        //    DataSet dsTipo = new DataSet();
+        //    dsTipo = miServicio.mtdListarTipo();
+        //    int C = dsTipo.Tables["tblDatos"].Rows.Count;
 
-            cmbTipo.DataSource = dsTipo.Tables["tblDatos"];
-            cmbTipo.DataTextField = "Tipo";
-            cmbTipo.DataValueField = "IdTipo";
-            cmbTipo.DataBind();
-        }
+        //    cmbTipo.DataSource = dsTipo.Tables["tblDatos"];
+        //    cmbTipo.DataTextField = "Tipo";
+        //    cmbTipo.DataValueField = "IdTipo";
+        //    cmbTipo.DataBind();
+        //}
 
         public void mtdCargarDatos()
         {
@@ -73,8 +72,32 @@ namespace web
             txtPrecio.Text = dsListar.Tables["tblDatos"].Rows[0]["Precio"].ToString();
             txtDireccion.Text = dsListar.Tables["tblDatos"].Rows[0]["Direccion"].ToString();
             txtTelefono.Text = dsListar.Tables["tblDatos"].Rows[0]["Telefono"].ToString();
-            cmbTipo.Text = dsListar.Tables["tblDatos"].Rows[0]["Tipo"].ToString();
-            cmbEstado.Text = dsListar.Tables["tblDatos"].Rows[0]["Estado"].ToString();
+            //cmbTipo.Text = dsListar.Tables["tblDatos"].Rows[0]["Tipo"].ToString();
+            if (dsListar.Tables["tblDatos"].Rows[0]["Tipo"].ToString() == "Arriendo")
+            {
+                rbdArriendo.Checked = true;
+            }
+            else
+            {
+                rbdVenta.Checked = true;
+            }
+            if (dsListar.Tables["tblDatos"].Rows[0]["Estado"].ToString() == "Disponible")
+            {
+                cbxDisponible.Checked = true;
+            }
+            else
+            {
+                cbxNoDisponible.Checked = true;
+            }
+            if (dsListar.Tables["tblDatos"].Rows[0]["Estado"].ToString() == "Disponible")
+            {
+                rbdDiponible.Checked = true;
+            }
+            else
+            {
+                rbdNoDisponible.Checked = true;
+            }
+           
             cmbHabitacion.Text = dsListar.Tables["tblDatos"].Rows[0]["NumeroHabitaciones"].ToString();
             cmbEstrato.Text = dsListar.Tables["tblDatos"].Rows[0]["Estrato"].ToString();
             txtDescripcion.Text = dsListar.Tables["tblDatos"].Rows[0]["Descripcion"].ToString();
@@ -108,6 +131,30 @@ namespace web
             cmbCategoria.DataTextField = "Categoria";
             cmbCategoria.DataValueField = "IdCategoria";
             cmbCategoria.DataBind();
+        }
+
+        protected void rbdNoDisponible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbdDiponible.Checked == false)
+            {
+                rbdNoDisponible.Checked = true;
+            }
+            else
+            {
+                rbdNoDisponible.Checked = false;
+            }
+        }
+
+        protected void cbxNoDisponible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxDisponible.Checked == false)
+            {
+                cbxNoDisponible.Checked = true;
+            }
+            else
+            {
+                cbxNoDisponible.Checked = false;
+            }
         }
     }
 }
