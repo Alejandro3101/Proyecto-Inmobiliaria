@@ -37,6 +37,7 @@ namespace web
                 
 
                 mi.mtdRegistrarFoto(nom, int.Parse(lblId.Text));
+                Response.Redirect("indexRegistrado.aspx");
             }
             else
             {
