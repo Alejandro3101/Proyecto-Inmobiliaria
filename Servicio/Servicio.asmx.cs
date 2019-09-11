@@ -73,6 +73,14 @@ namespace Servicio
             return dsPublicacion;
         }
 
+        [WebMethod]
+        public DataSet mtdListarPublicacion3(clPublicacion objPublica)
+        {
+            DataSet dsPublicacion = new DataSet();
+            clPublicacion objPubli = new clPublicacion();
+            dsPublicacion = objPubli.mtdListar3(objPublica);
+            return dsPublicacion;
+        }
 
         [WebMethod]
         public DataSet mtdListarPublicacionesU(clPublicacion objPubliU)

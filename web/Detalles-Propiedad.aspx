@@ -109,14 +109,27 @@
           <div class="col-lg-8">
             <div>
               <div class="slide-one-item home-slider owl-carousel">
-                <div><img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"></div>
-                <div><img src="images/hero_bg_2.jpg" alt="Image" class="img-fluid"></div>
-                <div><img src="images/hero_bg_3.jpg" alt="Image" class="img-fluid"></div>
+                  <a  class="property-thumbnail h-100"> 
+                <asp:Image ID="imgFoto" runat="server" alt="Image" class="img-fluid" />
+                      </a>
               </div>
             </div>
+
+              <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal">
+                  <ItemTemplate>
+                      <a  class="property-thumbnail h-100">
+                <div>
+
+            </div>
+                <img src="PublicacionesImagenes/<%#Eval("Foto") %>" alt="Image" class="img-fluid" height="250" width="250">
+              </a>
+                  </ItemTemplate>
+              </asp:DataList>
+
             <div class="bg-white property-body border-bottom border-left border-right">
               <div class="row mb-5">
                 <div class="col-md-6">
+
                     <asp:Label ID="lblPrecio" runat="server" class="text-success h1 mb-3" Text=""></asp:Label>
                 </div>
                 
