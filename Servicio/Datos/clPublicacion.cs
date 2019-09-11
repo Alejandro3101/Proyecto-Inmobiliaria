@@ -37,14 +37,25 @@ namespace Servicio.Datos
 
         public DataSet mtdListar2( clPublicacion objPubli )
         {
-            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Foto.Foto " +
+            string consulta = "select  Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Foto.Foto " +
                 "from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria " +
                 "inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo" +
-                " inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
+                " inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where  Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
             DataSet dsUsuario = new DataSet();
             clConexion objConexion = new clConexion();
             dsUsuario = objConexion.mtdDesconectado(consulta);
             return dsUsuario;
+        }
+
+        public DataSet mtdListar3(clPublicacion objPublica)
+        {
+            string consulta = "select Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado, Foto.Foto" +
+                "  from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad" +
+                " inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Estado on Estado.IdEstado = Publicacion.IdEstado inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where Publicacion.IdPublicacion = " + objPublica.IdPublicacion + " ";
+            DataSet dsPublicacion = new DataSet();
+            clConexion objConexion = new clConexion();
+            dsPublicacion = objConexion.mtdDesconectado(consulta);
+            return dsPublicacion;
         }
 
         public DataSet mtdListarPublicacionU(clPublicacion objPublica)

@@ -82,7 +82,11 @@ namespace web
             {
                 case "Click":
                     somedata = e.CommandArgument.ToString();
+                    Application["IdPublicacion"] = somedata;
+                    Response.Redirect("Detalles-Propiedad.aspx");
+                    
                     break;
+                    
             }
         }
 
@@ -90,7 +94,6 @@ namespace web
         {
             Button btnVerDetalles = e.Item.FindControl("btnVerDetalles") as Button;
             btnVerDetalles.OnClientClick = String.Format("showValue('{0}');", btnVerDetalles.CommandArgument);
-
         }
 
     }

@@ -146,14 +146,7 @@
               <br />
               <br />
                
-               
-
-          </form>
-          </div>
-          </div>
-        </div>
-
-     <div class="site-section site-section-sm bg-light">
+               <div class="site-section site-section-sm bg-light">
          <div class="container">
 
           
@@ -195,7 +188,7 @@
                   </li>
                 </ul>
 
-                <asp:Button ID="btnVerDetalles" runat="server" Text="Ver Detalles" CommandName="Click" CommandArgument='<%#Eval("IdPublicacion") %>' /> </button>
+                <asp:Button ID="btnVerDetalles" runat="server" Text="Ver Detalles" CommandName="Click" CommandArgument='<%#Eval("IdPublicacion") %>' />
               </div>
 
             </div>
@@ -207,6 +200,13 @@
     </asp:Repeater>
       </div>
     </div>
+
+          </form>
+          </div>
+          </div>
+        </div>
+
+     
 
     <div class="site-section">
         <div class="container">

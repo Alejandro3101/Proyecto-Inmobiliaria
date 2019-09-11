@@ -129,6 +129,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="mtdListarPublicacion3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublica" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacion3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicacion3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="mtdListarPublicacionesU">
         <s:complexType>
           <s:sequence>
@@ -322,6 +343,12 @@
   <wsdl:message name="mtdListarPublicaciones2SoapOut">
     <wsdl:part name="parameters" element="tns:mtdListarPublicaciones2Response" />
   </wsdl:message>
+  <wsdl:message name="mtdListarPublicacion3SoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacion3" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacion3SoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacion3Response" />
+  </wsdl:message>
   <wsdl:message name="mtdListarPublicacionesUSoapIn">
     <wsdl:part name="parameters" element="tns:mtdListarPublicacionesU" />
   </wsdl:message>
@@ -400,6 +427,10 @@
     <wsdl:operation name="mtdListarPublicaciones2">
       <wsdl:input message="tns:mtdListarPublicaciones2SoapIn" />
       <wsdl:output message="tns:mtdListarPublicaciones2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion3">
+      <wsdl:input message="tns:mtdListarPublicacion3SoapIn" />
+      <wsdl:output message="tns:mtdListarPublicacion3SoapOut" />
     </wsdl:operation>
     <wsdl:operation name="mtdListarPublicacionesU">
       <wsdl:input message="tns:mtdListarPublicacionesUSoapIn" />
@@ -487,6 +518,15 @@
     </wsdl:operation>
     <wsdl:operation name="mtdListarPublicaciones2">
       <soap:operation soapAction="http://tempuri.org/mtdListarPublicaciones2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion3">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicacion3" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -625,6 +665,15 @@
     </wsdl:operation>
     <wsdl:operation name="mtdListarPublicaciones2">
       <soap12:operation soapAction="http://tempuri.org/mtdListarPublicaciones2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion3">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicacion3" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

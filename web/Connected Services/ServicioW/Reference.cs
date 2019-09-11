@@ -58,6 +58,13 @@ namespace web.ServicioW {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicaciones2", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> mtdListarPublicaciones2Async(web.ServicioW.clPublicacion objPubli);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicacion3", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet mtdListarPublicacion3(web.ServicioW.clPublicacion objPublica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicacion3", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> mtdListarPublicacion3Async(web.ServicioW.clPublicacion objPublica);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdListarPublicacionesU", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet mtdListarPublicacionesU(web.ServicioW.clPublicacion objPubliU);
@@ -539,6 +546,14 @@ namespace web.ServicioW {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> mtdListarPublicaciones2Async(web.ServicioW.clPublicacion objPubli) {
             return base.Channel.mtdListarPublicaciones2Async(objPubli);
+        }
+        
+        public System.Data.DataSet mtdListarPublicacion3(web.ServicioW.clPublicacion objPublica) {
+            return base.Channel.mtdListarPublicacion3(objPublica);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> mtdListarPublicacion3Async(web.ServicioW.clPublicacion objPublica) {
+            return base.Channel.mtdListarPublicacion3Async(objPublica);
         }
         
         public System.Data.DataSet mtdListarPublicacionesU(web.ServicioW.clPublicacion objPubliU) {
