@@ -90,6 +90,13 @@ namespace Servicio.Datos
             int resultado = objConexion.mtdConectado(consulta);
             return resultado;
         }
+        public int mtdEditarPublicacion(clPublicacion objPubli)
+        {
+            string consulta = "update Publicacion set Nombre = '"+ objPubli.Nombre + "', Precio = '"+ objPubli.Precio + "', Descripcion='"+ objPubli.Descripcion + "', Telefono = '"+ objPubli.Telefono + "', Estrato = '"+ objPubli.Estrato + "' , Direccion = '"+ objPubli.Direccion + "', NumeroHabitaciones = "+ objPubli.Habitaciones + " , IdUsuario = "+ objPubli.IdUsuario + " , IdTipo = "+ objPubli.IdTipo + ", IdEstado = "+ objPubli.IdEstado + ", IdCiudad = "+ objPubli.IdCiudad + " , IdCategoria = "+ objPubli.IdCategoria + " where IdPublicacion = "+objPubli.IdPublicacion+" ";
+            clConexion objConexion = new clConexion();
+            int resultado = objConexion.mtdConectado(consulta);
+            return resultado;
+        }
 
     }
 }

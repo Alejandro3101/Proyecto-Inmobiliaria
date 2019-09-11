@@ -37,12 +37,17 @@ namespace web
                 
 
                 mi.mtdRegistrarFoto(nom, int.Parse(lblId.Text));
-                Response.Redirect("indexRegistrado.aspx");
             }
             else
             {
                 Response.Write("Cargue Imagen...");
             }
+        }
+        protected void btnTerminarPublicacion_Click(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("indexRegistrado.aspx");
+            
         }
     }
 }

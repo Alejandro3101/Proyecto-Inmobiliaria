@@ -21,6 +21,13 @@
                     <br />
                     <asp:Button ID="btnSubir" runat="server" Text="Adjuntar Imagen" CssClass="btn btn-success" OnClick="btnSubir_Click" />
 
+                    <br />
+
+                    <br />
+                    <asp:Button ID="Button2" runat="server" Text="Terminar Publicacion" CssClass="btn btn-success" OnClick="btnTerminarPublicacion_Click" />
+
+  
+
                 </div>
                 
 

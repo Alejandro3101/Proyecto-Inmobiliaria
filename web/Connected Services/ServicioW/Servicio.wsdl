@@ -206,6 +206,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="mtdEditarPublicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublicacion" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdEditarPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdEditarPublicacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="mtdRegistrarUsuario">
         <s:complexType>
           <s:sequence>
@@ -367,6 +381,12 @@
   <wsdl:message name="mtdRegistrarPublicacionSoapOut">
     <wsdl:part name="parameters" element="tns:mtdRegistrarPublicacionResponse" />
   </wsdl:message>
+  <wsdl:message name="mtdEditarPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdEditarPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdEditarPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdEditarPublicacionResponse" />
+  </wsdl:message>
   <wsdl:message name="mtdRegistrarUsuarioSoapIn">
     <wsdl:part name="parameters" element="tns:mtdRegistrarUsuario" />
   </wsdl:message>
@@ -443,6 +463,10 @@
     <wsdl:operation name="mtdRegistrarPublicacion">
       <wsdl:input message="tns:mtdRegistrarPublicacionSoapIn" />
       <wsdl:output message="tns:mtdRegistrarPublicacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdEditarPublicacion">
+      <wsdl:input message="tns:mtdEditarPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdEditarPublicacionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="mtdRegistrarUsuario">
       <wsdl:input message="tns:mtdRegistrarUsuarioSoapIn" />
@@ -554,6 +578,15 @@
     </wsdl:operation>
     <wsdl:operation name="mtdRegistrarPublicacion">
       <soap:operation soapAction="http://tempuri.org/mtdRegistrarPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdEditarPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdEditarPublicacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -701,6 +734,15 @@
     </wsdl:operation>
     <wsdl:operation name="mtdRegistrarPublicacion">
       <soap12:operation soapAction="http://tempuri.org/mtdRegistrarPublicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdEditarPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdEditarPublicacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
