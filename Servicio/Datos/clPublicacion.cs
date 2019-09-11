@@ -61,7 +61,7 @@ namespace Servicio.Datos
 
         public DataSet mtdListarPublicacionU(clPublicacion objPublica)
         {
-            string consulta = "select Nombre,Precio,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado" +
+            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado" +
                 "  from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad" +
                 " inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Estado on Estado.IdEstado = Publicacion.IdEstado  where IdUsuario = " + objPublica.IdUsuario +"";
             DataSet dsPublicacion = new DataSet();
