@@ -37,10 +37,10 @@ namespace Servicio.Datos
 
         public DataSet mtdListar2( clPublicacion objPubli )
         {
-            string consulta = "select  Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Foto.Foto " +
-                "from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria " +
-                "inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo" +
-                " inner join Foto on Foto.IdPublicacion = Publicacion.IdPublicacion where  Publicacion.IdCategoria = " + objPubli.IdCategoria + " and Publicacion.IdCiudad = " + objPubli.IdCiudad + "and Publicacion.IdTipo = " + objPubli.IdTipo + "";
+            string consulta = "SELECT Publicacion.IdPublicacion, Nombre, Precio, Descripcion, Telefono, Estrato,Direccion,NumeroHabitaciones," +
+                " (SELECT TOP 1 Foto FROM Foto WHERE Foto.IdPublicacion = Publicacion.IdPublicacion )" +
+                "FROM Publicacion INNER JOIN Categoria ON Categoria.IdCategoria = Publicacion.IdCategoria INNER JOIN Ciudad ON Ciudad.IdCiudad = Publicacion.IdCiudad " +
+                "INNER JOIN Tipo ON Tipo.IdTipo = Publicacion.IdTipo WHERE Publicacion.IdCategoria = " + objPubli.IdCategoria + " AND Publicacion.IdCiudad = " + objPubli.IdCiudad + " AND Publicacion.IdTipo = " + objPubli.IdTipo + "; ";
             DataSet dsUsuario = new DataSet();
             clConexion objConexion = new clConexion();
             dsUsuario = objConexion.mtdDesconectado(consulta);
