@@ -146,10 +146,9 @@
               <br />
               <br />
                
-               <div class="site-section site-section-sm bg-light">
-         <div class="container">
-
-          
+               <%--<div class="site-section site-section-sm bg-light">
+         <div class="container">--%>
+                       
           <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand" OnItemDataBound="Repeater1_ItemDataBound">
                <ItemTemplate>
            
@@ -163,9 +162,9 @@
                 <div>
 
             </div>
-                <img src="PublicacionesImagenes/<%#Eval("Foto") %>" alt="Image" class="img-fluid">
+                <img src="PublicacionesImagenes/<%#Eval("Column1") %>" alt="Image" class="img-fluid">
               </a>
-                <asp:Label ID="lblId" runat="server" ><%#Eval("IdPublicacion") %></asp:Label>
+               <%-- <asp:Label ID="lblId" runat="server" ><%#Eval("IdPublicacion") %></asp:Label>--%>
               <div class="p-4 property-body">
                 <h1 class="property-title"> &nbsp &nbsp<%#Eval("Nombre") %></h1> 
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <%#Eval("Direccion") %></span>
@@ -198,13 +197,18 @@
      </ItemTemplate>
 
     </asp:Repeater>
-      </div>
-    </div>
+     <%-- </div>
+    </div>--%>
 
           </form>
           </div>
           </div>
         </div>
+
+
+
+
+
 
      
 

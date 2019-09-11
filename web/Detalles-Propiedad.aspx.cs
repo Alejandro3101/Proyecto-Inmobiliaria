@@ -19,11 +19,12 @@ namespace web
             ServicioW.clPublicacion objPublicacion = new ServicioW.clPublicacion();
             objPublicacion.IdPublicacion = Id;
             dsListar = miServicio.mtdListarPublicacion3(objPublicacion);
-            lblNombre.Text = dsListar.Tables["tblDatos"].Rows[0]["Nombre"].ToString();
+           // lblNombre.Text = dsListar.Tables["tblDatos"].Rows[0]["Nombre"].ToString();
             //imgFoto.ImageUrl= "/PublicacionesImagenes/" + dsListar.Tables["tblDatos"].Rows[0]["Foto"].ToString();
             lblPrecio.Text = dsListar.Tables["tblDatos"].Rows[0]["Precio"].ToString();
             lblHabitacion.Text = dsListar.Tables["tblDatos"].Rows[0]["NumeroHabitaciones"].ToString();
             lblEstrato.Text = dsListar.Tables["tblDatos"].Rows[0]["Estrato"].ToString();
+            lblTelefono.Text = dsListar.Tables["tblDatos"].Rows[0]["Telefono"].ToString();
             lblDescripcion.Text = dsListar.Tables["tblDatos"].Rows[0]["Descripcion"].ToString();
             DataList1.DataSource = dsListar;
             DataList1.DataBind();

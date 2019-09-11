@@ -6,7 +6,7 @@
      <!DOCTYPE html>
 <html>
   <head>
-    <title>Homeland &mdash; Colorlib Website Template</title>
+    <title>SaleYa &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -49,7 +49,7 @@
         <div class="container py-1">
           <div class="row align-items-center">
             <div class="col-8 col-md-8 col-lg-4">
-              <h1 class="mb-0"><a href="index.aspx" class="text-white h2 mb-0"><strong>Homeland<span class="text-danger">.</span></strong></a></h1>
+              <h1 class="mb-0"><a href="index.aspx" class="text-white h2 mb-0"><strong>SaleYa<span class="text-danger">.</span></strong></a></h1>
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -58,29 +58,9 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                   <li class="active">
-                    <a href="index.aspx">Home</a>
+                    <a href="index.aspx">Inicio</a>
                   </li>
-                  <li><a href="buy.aspx">Buy</a></li>
-                  <li><a href="rent.aspx">Rent</a></li>
-                  <li class="has-children">
-                    <a href="properties.aspx">Properties</a>
-                    <ul class="dropdown arrow-top">
-                      <li><a href="#">Condo</a></li>
-                      <li><a href="#">Property Land</a></li>
-                      <li><a href="#">Commercial Building</a></li>
-                      <li class="has-children">
-                        <a href="#">Sub Menu</a>
-                        <ul class="dropdown">
-                          <li><a href="#">Menu One</a></li>
-                          <li><a href="#">Menu Two</a></li>
-                          <li><a href="#">Menu Three</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="blog.aspx">Blog</a></li>
-                  <li><a href="about.aspx">About</a></li>
-                  <li><a href="contact.aspx">Contact</a></li>
+                  
                 </ul>
               </nav>
             </div>
@@ -91,17 +71,18 @@
       </div>
     </div>
 
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
-            <span class="d-inline-block text-white px-3 mb-3 property-offer-type rounded">Detalles De la Propiedad</span>
-              <asp:Label ID="lblNombre" runat="server" class="mb-2" Text=""></asp:Label>
-<%--            <h1 class="mb-2">625 S. Berendo St</h1>--%>
+            <h1 class="mb-2">Detalle Publicacion</h1>
           </div>
         </div>
       </div>
     </div>
+              <%--<asp:Label ID="lblNombre" runat="server" class="mb-2" Text=""></asp:Label>--%>
+<%--            <h1 class="mb-2">625 S. Berendo St</h1>--%>
+        
 
     <div class="site-section site-section-sm">
       <div class="container">
@@ -110,7 +91,7 @@
             <div>
               <div class="slide-one-item home-slider owl-carousel">
                   <a  class="property-thumbnail h-100"> 
-                <asp:Image ID="imgFoto" runat="server" alt="Image" class="img-fluid" />
+                <asp:Image ID="imgFoto" runat="server" class="img-fluid" />
                       </a>
               </div>
             </div>
@@ -129,7 +110,8 @@
             <div class="bg-white property-body border-bottom border-left border-right">
               <div class="row mb-5">
                 <div class="col-md-6">
-
+                     <span class="d-inline-block text-black mb-0 caption-text">Precio</span>
+                    <br />
                     <asp:Label ID="lblPrecio" runat="server" class="text-success h1 mb-3" Text=""></asp:Label>
                 </div>
                 
@@ -139,66 +121,31 @@
                   <span class="d-inline-block text-black mb-0 caption-text">Habitaciones</span>
                     <asp:Label ID="lblHabitacion" runat="server"  class="d-block" Text=""></asp:Label>
                 </div>
+
                 <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
                   <span class="d-inline-block text-black mb-0 caption-text">Estrato</span>
                     <asp:Label ID="lblEstrato" runat="server"  class="d-block" Text=""></asp:Label>
                 </div>
                 
+                   <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                  <span class="d-inline-block text-black mb-0 caption-text">Telefono</span>
+                    <asp:Label ID="lblTelefono" runat="server"  class="d-block" Text=""></asp:Label>
+                </div>
+
               </div>
               <h2 class="h4 text-black">Descripcion</h2>
                 <asp:Label runat="server" ID="lblDescripcion" Text=""></asp:Label>
 
-              <div class="row no-gutters mt-5">
-                <div class="col-12">
-                  <h2 class="h4 text-black mb-3">Gallery</h2>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_1.jpg" class="image-popup gal-item"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_2.jpg" class="image-popup gal-item"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_3.jpg" class="image-popup gal-item"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_4.jpg" class="image-popup gal-item"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_5.jpg" class="image-popup gal-item"><img src="images/img_5.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_6.jpg" class="image-popup gal-item"><img src="images/img_6.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_7.jpg" class="image-popup gal-item"><img src="images/img_7.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_8.jpg" class="image-popup gal-item"><img src="images/img_8.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_1.jpg" class="image-popup gal-item"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_2.jpg" class="image-popup gal-item"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_3.jpg" class="image-popup gal-item"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="images/img_4.jpg" class="image-popup gal-item"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-lg-4">
 
             <div class="bg-white widget border rounded">
 
-              <h3 class="h4 text-black widget-title mb-3">Contact Agent</h3>
+              <h3 class="h4 text-black widget-title mb-3">Contactanos</h3>
               <form action="" class="form-contact-agent">
                 <div class="form-group">
-                  <label for="name">Name</label>
+                  <label for="name">Nombre</label>
                   <input type="text" id="name" class="form-control">
                 </div>
                 <div class="form-group">
@@ -206,19 +153,16 @@
                   <input type="email" id="email" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone</label>
+                  <label for="phone">Celular</label>
                   <input type="text" id="phone" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="submit" id="phone" class="btn btn-primary" value="Send Message">
+                  <input type="submit" id="phone" class="btn btn-primary" value="Enviar Mensaje">
                 </div>
               </form>
             </div>
 
-            <div class="bg-white widget border rounded">
-              <h3 class="h4 text-black widget-title mb-3">Paragraph</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit qui explicabo, libero nam, saepe eligendi. Molestias maiores illum error rerum. Exercitationem ullam saepe, minus, reiciendis ducimus quis. Illo, quisquam, veritatis.</p>
-            </div>
+            
 
           </div>
           
@@ -226,121 +170,9 @@
       </div>
     </div>
 
-    <div class="site-section site-section-sm bg-light">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-12">
-            <div class="site-section-title mb-5">
-              <h2>Related Properties</h2>
-            </div>
-          </div>
-        </div>
-      
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.aspx" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
-                </div>
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.aspx">625 S. Berendo St</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 625 S. Berendo St Unit 607 Los Angeles, CA 90005</span>
-                  <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-                    
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.aspx" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
-                </div>
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite active"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.aspx">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-                    
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.aspx" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Lease</span>
-                </div>
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.aspx">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-                    
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-                    
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
+       
+        
 
     <footer class="site-footer">
       <div class="container">
