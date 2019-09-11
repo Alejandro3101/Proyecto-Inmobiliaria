@@ -79,6 +79,13 @@ namespace web.ServicioW {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarPublicacion", ReplyAction="*")]
         System.Threading.Tasks.Task<int> mtdRegistrarPublicacionAsync(web.ServicioW.clPublicacion objPublicacion);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdEditarPublicacion", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int mtdEditarPublicacion(web.ServicioW.clPublicacion objPublicacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdEditarPublicacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> mtdEditarPublicacionAsync(web.ServicioW.clPublicacion objPublicacion);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/mtdRegistrarUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int mtdRegistrarUsuario(web.ServicioW.clUsuario objUsuario);
@@ -123,7 +130,7 @@ namespace web.ServicioW {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -323,7 +330,7 @@ namespace web.ServicioW {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -563,6 +570,14 @@ namespace web.ServicioW {
         
         public System.Threading.Tasks.Task<int> mtdRegistrarPublicacionAsync(web.ServicioW.clPublicacion objPublicacion) {
             return base.Channel.mtdRegistrarPublicacionAsync(objPublicacion);
+        }
+        
+        public int mtdEditarPublicacion(web.ServicioW.clPublicacion objPublicacion) {
+            return base.Channel.mtdEditarPublicacion(objPublicacion);
+        }
+        
+        public System.Threading.Tasks.Task<int> mtdEditarPublicacionAsync(web.ServicioW.clPublicacion objPublicacion) {
+            return base.Channel.mtdEditarPublicacionAsync(objPublicacion);
         }
         
         public int mtdRegistrarUsuario(web.ServicioW.clUsuario objUsuario) {

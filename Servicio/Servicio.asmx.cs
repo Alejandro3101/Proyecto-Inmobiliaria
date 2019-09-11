@@ -101,6 +101,14 @@ namespace Servicio
         }
 
         [WebMethod]
+        public int mtdEditarPublicacion(clPublicacion objPublicacion)
+        {
+            clPublicacion objPubli = new clPublicacion();
+            int result = objPubli.mtdEditarPublicacion(objPublicacion);
+            return result;
+        }
+
+        [WebMethod]
         public int mtdRegistrarUsuario(clUsuario objUsuario)
         {
             clUsuario objUsuar = new clUsuario();

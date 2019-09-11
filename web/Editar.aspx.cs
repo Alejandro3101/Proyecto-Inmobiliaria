@@ -14,9 +14,10 @@ namespace web
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            //mtdCargarTipo();
-            //mtdCargarCiudad();
-            //mtdCargarCategoria();
+            mtdCargarTipo();
+            mtdCargarCiudad();
+            mtdCargarCategoria();
+            mtdCargarEstado();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -36,10 +37,15 @@ namespace web
             objPublicacion.Direccion = txtDireccion.Text;
             objPublicacion.Habitaciones = int.Parse(cmbHabitacion.SelectedValue.ToString());
             objPublicacion.IdUsuario = int.Parse(Application["IdUsuario"].ToString());
-            objPublicacion.IdEstado = 1;
+            objPublicacion.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
+            objPublicacion.IdEstado = int.Parse(cmbEstado.SelectedValue.ToString());
             objPublicacion.IdCiudad = int.Parse(cmbCiudad.SelectedValue.ToString());
             objPublicacion.IdCategoria = int.Parse(cmbCategoria.SelectedValue.ToString());
-            int result = miServicio.mtdRegistrarPublicacion(objPublicacion);
+
+            string Valor = Request.QueryString["id"].ToString();
+            objPublicacion.IdPublicacion = int.Parse(Valor); 
+
+            int result = miServicio.mtdEditarPublicacion(objPublicacion);
             if (result > 0)
             {
 
@@ -48,17 +54,29 @@ namespace web
             }
         }
 
-        //public void mtdCargarTipo()
-        //{
-        //    DataSet dsTipo = new DataSet();
-        //    dsTipo = miServicio.mtdListarTipo();
-        //    int C = dsTipo.Tables["tblDatos"].Rows.Count;
+        public void mtdCargarTipo()
+        {
+            DataSet dsTipo = new DataSet();
+            dsTipo = miServicio.mtdListarTipo();
+            int C = dsTipo.Tables["tblDatos"].Rows.Count;
 
-        //    cmbTipo.DataSource = dsTipo.Tables["tblDatos"];
-        //    cmbTipo.DataTextField = "Tipo";
-        //    cmbTipo.DataValueField = "IdTipo";
-        //    cmbTipo.DataBind();
-        //}
+            cmbTipo.DataSource = dsTipo.Tables["tblDatos"];
+            cmbTipo.DataTextField = "Tipo";
+            cmbTipo.DataValueField = "IdTipo";
+            cmbTipo.DataBind();
+        }
+
+        public void mtdCargarEstado()
+        {
+            DataSet dsEstado = new DataSet();
+            dsEstado = miServicio.mtdListarEstado();
+            int C = dsEstado.Tables["tblDatos"].Rows.Count;
+
+            cmbEstado.DataSource = dsEstado.Tables["tblDatos"];
+            cmbEstado.DataTextField = "Estado";
+            cmbEstado.DataValueField = "IdEstado";
+            cmbEstado.DataBind();
+        }
 
         public void mtdCargarDatos()
         {
@@ -73,30 +91,8 @@ namespace web
             txtDireccion.Text = dsListar.Tables["tblDatos"].Rows[0]["Direccion"].ToString();
             txtTelefono.Text = dsListar.Tables["tblDatos"].Rows[0]["Telefono"].ToString();
             //cmbTipo.Text = dsListar.Tables["tblDatos"].Rows[0]["Tipo"].ToString();
-            if (dsListar.Tables["tblDatos"].Rows[0]["Tipo"].ToString() == "Arriendo")
-            {
-                rbdArriendo.Checked = true;
-            }
-            else
-            {
-                rbdVenta.Checked = true;
-            }
-            if (dsListar.Tables["tblDatos"].Rows[0]["Estado"].ToString() == "Disponible")
-            {
-                cbxDisponible.Checked = true;
-            }
-            else
-            {
-                cbxNoDisponible.Checked = true;
-            }
-            if (dsListar.Tables["tblDatos"].Rows[0]["Estado"].ToString() == "Disponible")
-            {
-                rbdDiponible.Checked = true;
-            }
-            else
-            {
-                rbdNoDisponible.Checked = true;
-            }
+           
+            
            
             cmbHabitacion.Text = dsListar.Tables["tblDatos"].Rows[0]["NumeroHabitaciones"].ToString();
             cmbEstrato.Text = dsListar.Tables["tblDatos"].Rows[0]["Estrato"].ToString();
@@ -133,28 +129,7 @@ namespace web
             cmbCategoria.DataBind();
         }
 
-        protected void rbdNoDisponible_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbdDiponible.Checked == false)
-            {
-                rbdNoDisponible.Checked = true;
-            }
-            else
-            {
-                rbdNoDisponible.Checked = false;
-            }
-        }
-
-        protected void cbxNoDisponible_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbxDisponible.Checked == false)
-            {
-                cbxNoDisponible.Checked = true;
-            }
-            else
-            {
-                cbxNoDisponible.Checked = false;
-            }
-        }
+        
+        
     }
 }
