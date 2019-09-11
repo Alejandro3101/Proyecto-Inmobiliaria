@@ -70,6 +70,7 @@ namespace Servicio
             DataSet dsPublicacion = new DataSet();
             clPublicacion objPublicacion = new clPublicacion();
             dsPublicacion = objPublicacion.mtdListar2(objPubli);
+            int cant = dsPublicacion.Tables[0].Rows.Count;
             return dsPublicacion;
         }
 

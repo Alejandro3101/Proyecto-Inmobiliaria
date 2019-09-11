@@ -69,7 +69,8 @@ namespace web
             objPublicacion.IdCiudad = int.Parse(cmbBuscarCiudad.SelectedValue.ToString());
             objPublicacion.IdCategoria = int.Parse(cmbBuscarCategoria.SelectedValue.ToString());
             dsListar = miServicio.mtdListarPublicaciones2(objPublicacion);
-           
+            int cant = dsListar.Tables[0].Rows.Count;
+
             Repeater1.DataSource = dsListar;
             Repeater1.DataBind();
             

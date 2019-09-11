@@ -38,9 +38,10 @@ namespace Servicio.Datos
         public DataSet mtdListar2( clPublicacion objPubli )
         {
             string consulta = "SELECT Publicacion.IdPublicacion, Nombre, Precio, Descripcion, Telefono, Estrato,Direccion,NumeroHabitaciones," +
-                " (SELECT TOP 1 Foto FROM Foto WHERE Foto.IdPublicacion = Publicacion.IdPublicacion )" +
+                " (SELECT TOP 1  Foto FROM Foto WHERE Foto.IdPublicacion = Publicacion.IdPublicacion )" +
                 "FROM Publicacion INNER JOIN Categoria ON Categoria.IdCategoria = Publicacion.IdCategoria INNER JOIN Ciudad ON Ciudad.IdCiudad = Publicacion.IdCiudad " +
-                "INNER JOIN Tipo ON Tipo.IdTipo = Publicacion.IdTipo WHERE Publicacion.IdCategoria = " + objPubli.IdCategoria + " AND Publicacion.IdCiudad = " + objPubli.IdCiudad + " AND Publicacion.IdTipo = " + objPubli.IdTipo + "; ";
+                "INNER JOIN Tipo ON Tipo.IdTipo = Publicacion.IdTipo " +
+                "INNER JOIN Estado ON Estado.IdEstado = Publicacion.IdEstado WHERE Publicacion.IdCategoria = " + objPubli.IdCategoria + " AND Publicacion.IdCiudad = " + objPubli.IdCiudad + " AND Publicacion.IdTipo = " + objPubli.IdTipo + " AND Estado.Estado = 'Disponible'  ; ";
             DataSet dsUsuario = new DataSet();
             clConexion objConexion = new clConexion();
             dsUsuario = objConexion.mtdDesconectado(consulta);
@@ -60,7 +61,7 @@ namespace Servicio.Datos
 
         public DataSet mtdListarPublicacionU(clPublicacion objPublica)
         {
-            string consulta = "select Publicacion.IdPublicacion,Nombre,Precio,Descripcion,Telefono,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado" +
+            string consulta = "select Nombre,Precio,Estrato,Direccion,NumeroHabitaciones,Tipo.Tipo,Categoria.Categoria,Ciudad.Ciudad,Estado.Estado" +
                 "  from Publicacion inner join Categoria on Categoria.IdCategoria = Publicacion.IdCategoria inner join Ciudad on Ciudad.IdCiudad = Publicacion.IdCiudad" +
                 " inner join Tipo on Tipo.IdTipo = Publicacion.IdTipo inner join Estado on Estado.IdEstado = Publicacion.IdEstado  where IdUsuario = " + objPublica.IdUsuario +"";
             DataSet dsPublicacion = new DataSet();
