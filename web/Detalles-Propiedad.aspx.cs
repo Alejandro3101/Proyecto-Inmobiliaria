@@ -6,6 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using web;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace web
 {
@@ -28,6 +31,37 @@ namespace web
             lblDescripcion.Text = dsListar.Tables["tblDatos"].Rows[0]["Descripcion"].ToString();
             DataList1.DataSource = dsListar;
             DataList1.DataBind();
+        }
+
+        protected void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress(txtFrom.Text);
+                msg.To.Add(txtTo.Text);
+                msg.Subject = txtSubject.Text;
+                msg.Body = txtMenssage.Text;
+                MailAddress ms = new MailAddress(txtCopy.Text);
+                msg.CC.Add(ms);
+                SmtpClient sc = new SmtpClient("smpt.gmail.com");
+                sc.Port = 25;
+                sc.Credentials = new NetworkCredential(txtFrom.Text, txtPass.Text);
+                sc.EnableSsl = true;
+                sc.Send(msg);
+                Response.Write("Correo Enviado");
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write(ex.Message);
+            }
+
+
+
+
+
         }
     }
 }

@@ -65,7 +65,7 @@ a {
 
 .btn {
   position: relative;
-  top: 0; }
+  top: 2px; }
   .btn.btn-2 {
     letter-spacing: .2em;
     text-transform: uppercase;
@@ -82,7 +82,11 @@ a {
   .btn.btn-sm {
     font-size: 0.9rem; }
   .btn.btn-primary {
-    color: #fff; }
+    color: #fff;
+    left: 9px;
+    height: 46px;
+    width: 241px;
+}
   .btn.btn-outline-primary:hover {
     color: #fff !important; }
   .btn.btn-black {
