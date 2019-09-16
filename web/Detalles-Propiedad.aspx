@@ -145,69 +145,28 @@
               <h3 class="h4 text-black widget-title mb-3">Contactanos</h3>
               <form runat="server" class="form-contact-agent">
                
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Envianos un mensaje </button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Enviar Mensaje</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-                </div>
+                  
 
 
 
                    <div class="form-group">
-              <asp:Label ID="Label1" runat="server" Text="De:"></asp:Label>
-              <asp:TextBox ID="txtFrom" type="email"  class="form-control" runat="server"></asp:TextBox>
+              <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
+              <asp:TextBox ID="txtnombre" type="text"  class="form-control" runat="server"></asp:TextBox>
           </div>
             <div class="form-group">
-                <asp:Label ID="Label2" runat="server" Text="Contraseña:"></asp:Label>
-              <asp:TextBox ID="txtPass" type="password"  class="form-control" runat="server"></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" Text="Correo:"></asp:Label>
+              <asp:TextBox ID="txtcorreo" type="email"  class="form-control" runat="server"></asp:TextBox>
           </div>                
             <div class="form-group">
-                <asp:Label ID="Label3" runat="server" Text="CC:"></asp:Label>
-              <asp:TextBox ID="txtCopy" type="text"  class="form-control" runat="server"></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="Descripcion:"></asp:Label>
+              <asp:TextBox ID="txtdescripcion" type="text"  class="form-control" runat="server"></asp:TextBox>
           </div> 
-             <div class="form-group">
-                <asp:Label ID="Label4" runat="server" Text="Para:"></asp:Label>
-              <asp:TextBox ID="txtTo" type="text"  class="form-control" runat="server"></asp:TextBox>
-          </div>   
-             <div class="form-group">
-                <asp:Label ID="Label5" runat="server" Text="Motivo:"></asp:Label>
-              <asp:TextBox ID="txtSubject" type="text"  class="form-control" runat="server"></asp:TextBox>
-          </div>   
-             <div class="form-group">
-                <asp:Label ID="Label7" runat="server" Text="Mensaje:"></asp:Label>
-              <asp:TextBox ID="txtMenssage" type="text"  class="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
-          </div>   
             
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-          <asp:Button ID="btnEnviar" class="btn btn-primary" runat="server" Text="Enviar Mensaje" OnClick="btnEnviar_Click" />
-
-
-
-          
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-          <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Enviar Mensaje" />
-
+                  <asp:Button ID="btnenviar" runat="server" Text="Button" OnClick="btnenviar_Click1" />
 
 
       </div>
+      
     </div>
   </div>
 </div>

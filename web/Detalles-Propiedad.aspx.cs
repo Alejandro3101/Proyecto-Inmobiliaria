@@ -33,29 +33,38 @@ namespace web
             DataList1.DataBind();
         }
 
-        protected void btnEnviar_Click(object sender, EventArgs e)
+
+        protected void btnenviar_Click1(object sender, EventArgs e)
         {
 
+
+            
+                MailMessage msg = new MailMessage();
+                msg.To.Add("alejo001vale@gmail.com");
+
+            msg.From = new MailAddress("alejo001vale@gmail.com");
+            msg.Subject = txtcorreo.Text;
+                msg.Body = txtdescripcion.Text;
+                msg.IsBodyHtml = true;
+                msg.Priority = MailPriority.Normal;
+                SmtpClient sc = new SmtpClient("smpt.gmail.com");
+                sc.Host = "smtp.gmail.com";
+                sc.Port = 587;
+            sc.EnableSsl = true;
+            sc.UseDefaultCredentials = false;
+            sc.Credentials = new NetworkCredential("alejo001vale@gmail.com", "indeportesFC1");
+                
+                
+            string output = null;
             try
             {
-                MailMessage msg = new MailMessage();
-                msg.From = new MailAddress(txtFrom.Text);
-                msg.To.Add(txtTo.Text);
-                msg.Subject = txtSubject.Text;
-                msg.Body = txtMenssage.Text;
-                MailAddress ms = new MailAddress(txtCopy.Text);
-                msg.CC.Add(ms);
-                SmtpClient sc = new SmtpClient("smpt.gmail.com");
-                sc.Port = 25;
-                sc.Credentials = new NetworkCredential(txtFrom.Text, txtPass.Text);
-                sc.EnableSsl = true;
                 sc.Send(msg);
-                Response.Write("Correo Enviado");
+                msg.Dispose();
+                output = "Corre electrónico fue enviado satisfactoriamente.";
             }
             catch (Exception ex)
             {
-
-                Response.Write(ex.Message);
+                output = "Error enviando correo electrónico: " + ex.Message;
             }
 
 
