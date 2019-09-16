@@ -22,6 +22,11 @@ namespace web
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            string id = Application["IdUsuario"].ToString();
+            if (Application["IdUsuario"].ToString() == "")
+            {
+                Response.Redirect("Index.aspx", true);
+            }
         }
 
         public void mtdCargarTipo()
@@ -91,6 +96,18 @@ namespace web
         {
             Button btnVerDetalles = e.Item.FindControl("btnVerDetalles") as Button;
             btnVerDetalles.OnClientClick = String.Format("showValue('{0}');", btnVerDetalles.CommandArgument);
+        }
+
+        protected void btnCerrarS_Click(object sender, EventArgs e)
+        {
+
+            System.Web.Security.FormsAuthentication.SignOut();
+            Session.RemoveAll();
+            Session.Abandon();
+            Application["IdUsuario"] = "";
+            HttpContext.Current.Response.Redirect("Index.aspx", true);
+
+
         }
     }
 }

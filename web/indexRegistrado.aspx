@@ -8,7 +8,7 @@
  <Title> SaleYa &mdash; Busqueda de Inmuebles</title>
 
 
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,8 +32,19 @@
 
     <link rel="stylesheet" href="css/style.css">
     
+      
+      
   </head>
-  <body>
+  <body >
+
+
+      <script>
+          function myfunction() {
+              location.reload();
+          }
+
+      </script>
+
   
   <div class="site-loader">
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bdSaleYaConnectionString %>" SelectCommand="SELECT Categoria.Categoria, Ciudad.Ciudad, Tipo.Tipo, Publicacion.Nombre, Publicacion.Precio, Publicacion.Descripcion, Publicacion.Telefono, Publicacion.Estrato, Publicacion.Direccion, Publicacion.NumeroHabitaciones FROM Publicacion INNER JOIN Ciudad ON Publicacion.IdCiudad = Ciudad.IdCiudad INNER JOIN Tipo ON Publicacion.IdTipo = Tipo.IdTipo INNER JOIN Categoria ON Publicacion.IdCategoria = Categoria.IdCategoria WHERE (Categoria.Categoria = @Categoria) OR (Ciudad.Ciudad = @Ciudad) OR (Tipo.Tipo = @Tipo)">
@@ -46,6 +57,8 @@
       </div>
   
   <div class="site-wrap">
+
+     
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -64,50 +77,26 @@
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
-
+                 
                 <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+                     
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
 
-                <ul class="site-menu js-clone-nav d-none d-lg-block">
-                  <li class="active">
+                     
+
+                  <li class="active">                    
                     <a href="indexRegistrado.aspx">Inicio</a>
-
-                  </li>
+                      </li>
                   <li><a href="Publicacion.aspx">Publicar Inmueble</a></li>
                      <li><a href="MisPublicaciones.aspx">Mis Publicaciones</a></li>
 
-                    <input type="button" value="Cerrar Sesion" onclick="EventoAlert()"/>
-               
-                    <script> 
+                       <li><a    href="index.aspx"  onServerClick="btnCerrarS_Click" runat="server">Cerrar Sesion</a></li>
 
 
-	                    function EventoAlert(){
+                      </ul>
 
-                    Swal.fire({
-                      title: 'Seguro desea Cerrar Sesion',
-                      showCancelButton: true,
-                      confirmButtonColor: '#3085d6',
-                      cancelButtonColor: '#d33',
-                      confirmButtonText: 'Salir'
-                    }).then((result) => {
-                        if (result.value) {
-
-  	                   window.location = "index.aspx";
-    
-                      }
-                    });
-
-
-	                    }
-
-
-
-                    </script>
-
-
-
-                    
-                </ul>
               </nav>
+               
             </div>
            
 
@@ -149,8 +138,8 @@
 
     <div class="site-section site-section-sm pb-0">
       <div class="container">
-        <div class="row">
-          <form  class="form-search col-md-12" runat="server" style="margin-top: -100px;">
+        <div class="row">          
+             <form  class="form-search col-md-12" runat="server" style="margin-top: -100px;">
             <div class="row  align-items-end">
               <div class="col-md-3">
                 <label for="list-types">Tipo De Vivienda</label>
@@ -201,8 +190,7 @@
             </div>
                 <img src="PublicacionesImagenes/<%#Eval("Column1") %>" alt="Image" class="img-fluid">
               </a>
-               <%-- <asp:Label ID="lblId" runat="server" ><%#Eval("IdPublicacion") %></asp:Label>--%>
-              <div class="p-4 property-body">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%-- <asp:Label ID="lblId" runat="server" ><%#Eval("IdPublicacion") %></asp:Label>--%><div class="p-4 property-body">
                 <h1 class="property-title"> &nbsp &nbsp<%#Eval("Nombre") %></h1> 
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <%#Eval("Direccion") %></span>
                 <strong class="property-price text-primary mb-3 d-block text-success">$ <%#Eval("Precio") %></strong>
